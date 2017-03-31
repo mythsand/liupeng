@@ -1,2 +1,2 @@
 #  `init`
-* mhw
+* --mhw
