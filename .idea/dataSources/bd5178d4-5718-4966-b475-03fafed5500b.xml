@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - liupeng@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="liupeng">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <schema id="7" parent="1" name="winter"/>
+    <table id="8" parent="2" name="admin"/>
+    <table id="9" parent="2" name="project"/>
+    <table id="10" parent="2" name="student"/>
+    <table id="11" parent="2" name="teacher"/>
+    <column id="12" parent="8" name="num">
+      <Position>1</Position>
+      <DataType>int(14) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="13" parent="8" name="name">
+      <Position>2</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="14" parent="8" name="passwd">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="15" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>int(14) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="9" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="17" parent="9" name="date">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="9" name="path">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="19" parent="9" name="grade">
+      <Position>5</Position>
+      <DataType>int(10)|0</DataType>
+    </column>
+    <column id="20" parent="9" name="judge">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="21" parent="9" name="stu_num">
+      <Position>7</Position>
+      <DataType>int(14) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="9" name="tea_num">
+      <Position>8</Position>
+      <DataType>int(14) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="9" name="project_id">
+      <Position>9</Position>
+      <DataType>int(14) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="24" parent="9" name="stu_idx">
+      <ColNames>stu_num</ColNames>
+    </index>
+    <index id="25" parent="9" name="tea">
+      <ColNames>tea_num</ColNames>
+    </index>
+    <key id="26" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="27" parent="9" name="stu">
+      <ColNames>stu_num</ColNames>
+      <RefSchemaName>liupeng</RefSchemaName>
+      <RefTableName>student</RefTableName>
+      <RefColNames>num</RefColNames>
+    </foreign-key>
+    <foreign-key id="28" parent="9" name="tea">
+      <ColNames>tea_num</ColNames>
+      <RefSchemaName>liupeng</RefSchemaName>
+      <RefTableName>teacher</RefTableName>
+      <RefColNames>num</RefColNames>
+    </foreign-key>
+    <column id="29" parent="10" name="num">
+      <Position>1</Position>
+      <DataType>int(14) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="31" parent="10" name="passwd">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="32" parent="10" name="num_UNIQUE">
+      <ColNames>num</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="33" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>num</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="34" parent="10" name="num_UNIQUE">
+      <ColNames>num</ColNames>
+      <UnderlyingIndexName>num_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="35" parent="11" name="num">
+      <Position>1</Position>
+      <DataType>int(14) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="11" name="name">
+      <Position>2</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="37" parent="11" name="passwd">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="38" parent="11" name="num_UNIQUE">
+      <ColNames>num</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>num</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="40" parent="11" name="num_UNIQUE">
+      <ColNames>num</ColNames>
+      <UnderlyingIndexName>num_UNIQUE</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
