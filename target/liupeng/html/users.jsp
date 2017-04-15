@@ -86,58 +86,58 @@
 		</span> 
 		<span class="button">Live</span>
 		 <span class="button">Help</span>
-		 <span class="button blue"><a href="index.jsp">Logout</a></span>
+		 <span class="button blue"><a href="index">Logout</a></span>
 	</div>
 </section>
 </div>
 <nav>
 	<ul>
-		<li><a href="dashboard.html"><span class="icon">&#128711;</span> Dashboard</a></li>
+		<li><a href="dashboard"><span class="icon">&#128711;</span> Dashboard</a></li>
 		<li>
-			<a href="pages-table.html"><span class="icon">&#128196;</span> Pages</a>
+			<a href="pages-table"><span class="icon">&#128196;</span> Pages</a>
 			<ul class="submenu">
-				<li><a href="page-new.html">Create page</a></li>
-				<li><a href="page-timeline.html">View pages</a></li>
+				<li><a href="page-new">Create page</a></li>
+				<li><a href="page-timeline">View pages</a></li>
 			</ul>	
 		</li>
 		<li>
-			<a href="files.html"><span class="icon">&#127748;</span> Media <span class="pip">7</span></a>
+			<a href="files"><span class="icon">&#127748;</span> Media <span class="pip">7</span></a>
 			<ul class="submenu">
-				<li><a href="files-upload.html">Upload file</a></li>
-				<li><a href="files.html">View files</a></li>
+				<li><a href="files-upload">Upload file</a></li>
+				<li><a href="files">View files</a></li>
 			</ul>
 		</li>
-		<li class="section">
-			<a href="blog-timeline.html"><span class="icon">&#59160;</span> Blog <span class="pip">12</span></a>
-			<ul class="submenu">
-				<li><a href="blog-new.html">New post</a></li>
-				<li><a href="blog-table.html">All posts</a></li>
-				<li><a href="comments-timeline.html">View comments</a></li>
-			</ul>
-		</li>
-		<li><a href="statistics.html"><span class="icon">&#128202;</span> Statistics</a></li>
-		<li><a href="users.html"><span class="icon">&#128101;</span> Users <span class="pip">3</span></a></li>
 		<li>
-			<a href="ui-elements.html"><span class="icon">&#9881;</span> UI Elements</a>
+			<a href="blog-timeline"><span class="icon">&#59160;</span> Blog <span class="pip">12</span></a>
 			<ul class="submenu">
-				<li><a href="icon-fonts.html">Icon fonts</a></li>
+				<li><a href="blog-new">New post</a></li>
+				<li><a href="blog-table">All posts</a></li>
+				<li><a href="comments-timeline">View comments</a></li>
+			</ul>
+		</li>
+		<li><a href="statistics"><span class="icon">&#128202;</span> Statistics</a></li>
+		<li class="section"><a href="users"><span class="icon">&#128101;</span> Users <span class="pip">3</span></a></li>
+		<li>
+			<a href="ui-elements"><span class="icon">&#9881;</span> UI Elements</a>
+			<ul class="submenu">
+				<li><a href="icon-fonts">Icon fonts</a></li>
 			</ul>
 		</li>
 	</ul>
 </nav>
 
 <section class="alert">
-	<form method="link" action="blog-new.html">
+	<form method="link" action="page-new">
 		 <button class="green">Create new blog page</button>
 	</form>
 </section>
 <section class="content">
 	<section class="widget">
 		<header>
-			<span class="icon">&#59160;</span>
+			<span class="icon">&#128100;</span>
 			<hgroup>
-				<h1>Blog</h1>
-				<h2>CMS blog pages</h2>
+				<h1>Users</h1>
+				<h2>Current member accounts</h2>
 			</hgroup>
 			<aside>
 				<span>
@@ -154,125 +154,84 @@
 			<table id="myTable" border="0" width="100">
 				<thead>
 					<tr>
-						<th>Page title</th>
-						<th >Date</th>
-						<th>Child pages</th>
-						<th>Comments</th>
-						<th>Author</th>
+						<th class="avatar">Name</th>
+						<th>Email</th>
+						<th>Password</th>
+						<th>Date</th>
 					</tr>
 				</thead>
 					<tbody>
 						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>01/3/2013</td>
-							<td>0</td>
-							<td>0</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface1.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>12/03/2013</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>01/3/2013</td>
-							<td>0</td>
-							<td>10</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface2.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>27/02/2013</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>02/3/2013</td>
-							<td>0</td>
-							<td>3</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface3.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>03/12/2012</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>02/3/2013</td>
-							<td>0</td>
-							<td>6</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface4.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>31/12/2012</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>02/3/2013</td>
-							<td>0</td>
-							<td>62</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface1.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>29/11/2012</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" /> Contact us</td>
-							<td>03/3/2013</td>
-							<td>0</td>
-							<td>0</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface2.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>09/01/2013</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>04/3/2013</td>
-							<td>0</td>
-							<td>16</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface3.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>06/01/2013</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>06/3/2013</td>
-							<td>0</td>
-							<td>47</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface4.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>17/05/2012</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>07/3/2013</td>
-							<td>0</td>
-							<td>25</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface1.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>27/07/2011</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>09/3/2013</td>
-							<td>0</td>
-							<td>132</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface2.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>27/09/2012</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>12/3/2013</td>
-							<td>0</td>
-							<td>101</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface3.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>17/08/2011</td>
 						</tr>
 						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>14/3/2013</td>
-							<td>0</td>
-							<td>183</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>24/3/2013</td>
-							<td>0</td>
-							<td>49</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>27/3/2013</td>
-							<td>0</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>29/3/2013</td>
-							<td>0</td>
-							<td>87</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> How to design for retina display</td>
-							<td>30/3/2013</td>
-							<td>0</td>
-							<td>72</td>
-							<td>John Doe</td>
+							<td class="avatar"><img src="images/uiface4.png" alt="" height="40" width="40" /> John Doe</td>
+							<td>j.doe@mtsite.com</td>
+							<td>********</td>
+							<td>31/01/2012</td>
 						</tr>
 					</tbody>
 				</table>

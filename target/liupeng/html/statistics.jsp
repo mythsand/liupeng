@@ -86,41 +86,41 @@
 		</span> 
 		<span class="button">Live</span>
 		 <span class="button">Help</span>
-		 <span class="button blue"><a href="index.jsp">Logout</a></span>
+		 <span class="button blue"><a href="index">Logout</a></span>
 	</div>
 </section>
 </div>
 <nav>
 	<ul>
-		<li><a href="dashboard.html"><span class="icon">&#128711;</span> Dashboard</a></li>
+		<li><a href="dashboard"><span class="icon">&#128711;</span> Dashboard</a></li>
 		<li>
-			<a href="pages-table.html"><span class="icon">&#128196;</span> Pages</a>
+			<a href="pages-table"><span class="icon">&#128196;</span> Pages</a>
 			<ul class="submenu">
-				<li><a href="page-new.html">Create page</a></li>
-				<li><a href="page-timeline.html">View pages</a></li>
+				<li><a href="page-new">Create page</a></li>
+				<li><a href="page-timeline">View pages</a></li>
 			</ul>	
 		</li>
 		<li>
-			<a href="files.html"><span class="icon">&#127748;</span> Media <span class="pip">7</span></a>
+			<a href="files"><span class="icon">&#127748;</span> Media <span class="pip">7</span></a>
 			<ul class="submenu">
-				<li><a href="files-upload.html">Upload file</a></li>
-				<li><a href="files.html">View files</a></li>
+				<li><a href="files-upload">Upload file</a></li>
+				<li><a href="files">View files</a></li>
 			</ul>
 		</li>
-		<li class="section">
-			<a href="blog-timeline.html"><span class="icon">&#59160;</span> Blog <span class="pip">12</span></a>
-			<ul class="submenu">
-				<li><a href="blog-new.html">New post</a></li>
-				<li><a href="blog-table.html">All posts</a></li>
-				<li><a href="comments-timeline.html">View comments</a></li>
-			</ul>
-		</li>
-		<li><a href="statistics.html"><span class="icon">&#128202;</span> Statistics</a></li>
-		<li><a href="users.html"><span class="icon">&#128101;</span> Users <span class="pip">3</span></a></li>
 		<li>
-			<a href="ui-elements.html"><span class="icon">&#9881;</span> UI Elements</a>
+			<a href="blog-timeline"><span class="icon">&#59160;</span> Blog <span class="pip">12</span></a>
 			<ul class="submenu">
-				<li><a href="icon-fonts.html">Icon fonts</a></li>
+				<li><a href="blog-new">New post</a></li>
+				<li><a href="blog-table">All posts</a></li>
+				<li><a href="comments-timeline">View comments</a></li>
+			</ul>
+		</li>
+		<li class="section"><a href="statistics"><span class="icon">&#128202;</span> Statistics</a></li>
+		<li><a href="users"><span class="icon">&#128101;</span> Users <span class="pip">3</span></a></li>
+		<li>
+			<a href="ui-elements"><span class="icon">&#9881;</span> UI Elements</a>
+			<ul class="submenu">
+				<li><a href="icon-fonts">Icon fonts</a></li>
 			</ul>
 		</li>
 	</ul>
@@ -133,47 +133,31 @@
 	</div>
 </section>
 <section class="content">
-	<section class="widget" style="min-height:300px">
+	<section class="widget">
 		<header>
-			<span class="icon">&#59160;</span>
+			<span class="icon">&#128200;</span>
 			<hgroup>
-				<h1>Blog</h1>
-				<h2>Create new blog page</h2>
+				<h1>Website Statistics</h1>
+				<h2>An insiders view</h2>
 			</hgroup>
 			<aside>
-				<span>
-					<a href="#">&#9881;</a>
-					<ul class="settings-dd">
-						<li><label>Option a</label><input type="checkbox" /></li>
-						<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-						<li><label>Option c</label><input type="checkbox" /></li>
-					</ul>
-				</span>
+				<button class="left-btn">&#59229;</button><button class="right-btn">&#59230;</button>
 			</aside>
 		</header>
-		<div class="content">
-			<div class="field-wrap">
-				<input type="text" value="Title"/>
-			</div>
-			<div class="field-wrap">
-				<input type="text" value="Author"/>
-			</div>
-			<div class="field-wrap">
-				<input type="text" value="Tags"/>
-			</div>
-			<div class="field-wrap wysiwyg-wrap">
-				<textarea class="post" rows="5"></textarea>
-			</div>
-			<button type="submit" class="green">Post</button> <button type="submit" class="">Preview</button>
+		<div class="content cycle">
+			<div id="flot-example-2" class="graph-area"></div>
+			<div id="flot-example-1" class="graph-area"></div>
+		</div>
 		</div>
 	</section>
+	
 	<div class="widget-container">
 		<section class="widget small">
-			<header>
-				<span class="icon">&#59168;</span>
+			<header> 
+				<span class="icon">&#128318;</span>
 				<hgroup>
-					<h1>Latest comments</h1>
-					<h2>What they're saying</h2>
+					<h1>Website figures</h1>
+					<h2>Facts &amp; figures</h2>
 				</hgroup>
 				<aside>
 					<span>
@@ -186,31 +170,36 @@
 					</span>
 				</aside>
 			</header>
-			<div class="content no-padding timeline">
-				<div class="tl-post comments">
-					<span class="icon">&#59168;</span>
-					<p>
-						<a href="#">John Doe says:</a> Lorem ipsum dolor sit amet, consecteteur adipiscing elit sed diam nonummy.
-						<span class="reply"><input type="text" value="Respond to comment..."/></span>
-					</p>
-				</div>
-				<div class="tl-post comments">
-					<span class="icon">&#59168;</span>
-					<p>
-						<a href="#">John Doe says:</a> Lorem ipsum dolor sit amet, consecteteur adipiscing elit sed diam nonummy.
-						<span class="reply"><input type="text" value="Respond to comment..."/></span>
-					</p>
-				</div>
-				<span class="show-more"><a	 href="#">More</a></span>
+			<div class="content">
+				<section class="stats-wrapper">
+					<div class="stats">
+						<p><span>64</span></p>
+						<p>Pages</p>
+					</div>
+					<div class="stats">
+						<p><span>362</span></p>
+						<p>Comments</p>
+					</div>
+				</section>
+				<section class="stats-wrapper">
+					<div class="stats">
+						<p><span>7</span></p>
+						<p>Users</p>
+					</div>
+					<div class="stats">
+						<p><span>927</span></p>
+						<p>Assets</p>
+					</div>
+				</section>
 			</div>
 		</section>
 		
 		<section class="widget small">
 			<header> 
-				<span class="icon">&#128196;</span>
+				<span class="icon">&#9716;</span>
 				<hgroup>
-					<h1>Other pages</h1>
-					<h2>More pages</h2>
+					<h1>Pie chart</h1>
+					<h2>Display data as pie charts</h2>
 				</hgroup>
 				<aside>
 					<span>
@@ -223,22 +212,9 @@
 					</span>
 				</aside>
 			</header>
-			<div class="content no-padding timeline">
-				<div class="tl-post">
-					<span class="icon">&#59185;</span>
-					<p><a href="#">eCommerce design</a> service page.</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#59185;</span>
-					<p><a href="#">Search engine optimisation</a> service page..</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#59185;</span>
-					<p><a href="#">Website design</a> service page.</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#59185;</span>
-					<p><a href="#">Graphic design</a> service page.</p>
+			<div class="content">
+				<div class="pie graph-area">
+				
 				</div>
 			</div>
 		</section>
@@ -249,11 +225,22 @@
 <script src="js/custom.js"></script>
 <script src="js/cycle.js"></script>
 <script src="js/jquery.checkbox.min.js"></script>
-<!--<script src="js/flot.js"></script>
+<script src="js/flot.js"></script>
 <script src="js/flot.resize.js"></script>
-<script src="js/flot-graphs.js"></script>
 <script src="js/flot-time.js"></script>
-<script src="js/cycle.js"></script>-->
+<script src="js/flot-pie.js"></script>
+<script src="js/flot-graphs.js"></script>
+<script src="js/cycle.js"></script>
 <script src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript">
+// Feature slider for graphs
+$('.cycle').cycle({
+	fx: "scrollHorz",
+	timeout: 0,
+    slideResize: 0,
+    prev:    '.left-btn', 
+    next:    '.right-btn'
+});
+</script>
 </body>
 </html>

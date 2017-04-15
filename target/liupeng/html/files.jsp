@@ -8,6 +8,7 @@
 	<meta name="robots" content="" />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" href="css/style.css" media="all" />
+	<link rel="stylesheet" href="css/dropzone.css" media="all" />
 	<!--[if IE]><link rel="stylesheet" href="css/ie.css" media="all" /><![endif]-->
 </head>
 <body>
@@ -86,41 +87,41 @@
 		</span> 
 		<span class="button">Live</span>
 		 <span class="button">Help</span>
-		 <span class="button blue"><a href="index.jsp">Logout</a></span>
+		 <span class="button blue"><a href="index">Logout</a></span>
 	</div>
 </section>
 </div>
 <nav>
 	<ul>
-		<li><a href="dashboard.html"><span class="icon">&#128711;</span> Dashboard</a></li>
+		<li><a href="dashboard"><span class="icon">&#128711;</span> Dashboard</a></li>
 		<li>
-			<a href="pages-table.html"><span class="icon">&#128196;</span> Pages</a>
+			<a href="pages-table"><span class="icon">&#128196;</span> Pages</a>
 			<ul class="submenu">
-				<li><a href="page-new.html">Create page</a></li>
-				<li><a href="page-timeline.html">View pages</a></li>
+				<li><a href="page-new">Create page</a></li>
+				<li><a href="page-timeline">View pages</a></li>
 			</ul>	
 		</li>
-		<li>
-			<a href="files.html"><span class="icon">&#127748;</span> Media <span class="pip">7</span></a>
+		<li class="section">
+			<a href="files"><span class="icon">&#127748;</span> Media <span class="pip">7</span></a>
 			<ul class="submenu">
-				<li><a href="files-upload.html">Upload file</a></li>
-				<li><a href="files.html">View files</a></li>
+				<li><a href="files-upload">Upload file</a></li>
+				<li><a href="files">View files</a></li>
 			</ul>
 		</li>
 		<li>
-			<a href="blog-timeline.html"><span class="icon">&#59160;</span> Blog <span class="pip">12</span></a>
+			<a href="blog-timeline"><span class="icon">&#59160;</span> Blog <span class="pip">12</span></a>
 			<ul class="submenu">
-				<li><a href="blog-new.html">New post</a></li>
-				<li><a href="blog-table.html">All posts</a></li>
-				<li><a href="comments-timeline.html">View comments</a></li>
+				<li><a href="blog-new">New post</a></li>
+				<li><a href="blog-table">All posts</a></li>
+				<li><a href="comments-timeline">View comments</a></li>
 			</ul>
 		</li>
-		<li class="section"><a href="statistics.html"><span class="icon">&#128202;</span> Statistics</a></li>
-		<li><a href="users.html"><span class="icon">&#128101;</span> Users <span class="pip">3</span></a></li>
+		<li><a href="statistics"><span class="icon">&#128202;</span> Statistics</a></li>
+		<li><a href="users"><span class="icon">&#128101;</span> Users <span class="pip">3</span></a></li>
 		<li>
-			<a href="ui-elements.html"><span class="icon">&#9881;</span> UI Elements</a>
+			<a href="ui-elements"><span class="icon">&#9881;</span> UI Elements</a>
 			<ul class="submenu">
-				<li><a href="icon-fonts.html">Icon fonts</a></li>
+				<li><a href="icon-fonts">Icon fonts</a></li>
 			</ul>
 		</li>
 	</ul>
@@ -135,112 +136,50 @@
 <section class="content">
 	<section class="widget">
 		<header>
-			<span class="icon">&#128200;</span>
+			<span class="icon">&#127748;</span>
 			<hgroup>
-				<h1>Website Statistics</h1>
-				<h2>An insiders view</h2>
+				<h1>Media gallery</h1>
+				<h2>All uploaded files</h2>
 			</hgroup>
 			<aside>
-				<button class="left-btn">&#59229;</button><button class="right-btn">&#59230;</button>
+				<span>
+					<a href="#">&#9881;</a>
+					<ul class="settings-dd">
+						<li><label>Option a</label><input type="checkbox" /></li>
+						<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
+						<li><label>Option c</label><input type="checkbox" /></li>
+					</ul>
+				</span>
 			</aside>
 		</header>
-		<div class="content cycle">
-			<div id="flot-example-2" class="graph-area"></div>
-			<div id="flot-example-1" class="graph-area"></div>
-		</div>
+		<div class="content">
+			<div id="dropzone" class="dropzone gallery">
+				<a href="#"><img src="images/mobile-stats.png" alt="" width="200" height="150" /></a> 
+				<a href="#"><img src="images/mobile-dashboard.png" alt="" width="200" height="150" /></a> 
+				<a href="#"><img src="images/mobile-stats.png" alt="" width="200" height="150" /></a> 
+				<a href="#"><img src="images/mobile-dashboard.png" alt="" width="200" height="150" /></a> 
+				<a href="#"><img src="images/mobile-stats.png" alt="" width="200" height="150" /></a> 
+				<a href="#"><img src="images/mobile-dashboard.png" alt="" width="200" height="150" /></a> 
+				<a href="#"><img src="images/mobile-stats.png" alt="" width="200" height="150" /></a> 
+				<a href="#"><img src="images/mobile-dashboard.png" alt="" width="200" height="150" /></a> 
+				<a href="#"><img src="images/mobile-stats.png" alt="" width="200" height="150" /></a> 
+				<a href="#"><img src="images/mobile-dashboard.png" alt="" width="200" height="150" /></a> 
+				<a href="#"><img src="images/mobile-stats.png" alt="" width="200" height="150" /></a> 
+			</div>
 		</div>
 	</section>
-	
-	<div class="widget-container">
-		<section class="widget small">
-			<header> 
-				<span class="icon">&#128318;</span>
-				<hgroup>
-					<h1>Website figures</h1>
-					<h2>Facts &amp; figures</h2>
-				</hgroup>
-				<aside>
-					<span>
-						<a href="#">&#9881;</a>
-						<ul class="settings-dd">
-							<li><label>Option a</label><input type="checkbox" /></li>
-							<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-							<li><label>Option c</label><input type="checkbox" /></li>
-						</ul>
-					</span>
-				</aside>
-			</header>
-			<div class="content">
-				<section class="stats-wrapper">
-					<div class="stats">
-						<p><span>64</span></p>
-						<p>Pages</p>
-					</div>
-					<div class="stats">
-						<p><span>362</span></p>
-						<p>Comments</p>
-					</div>
-				</section>
-				<section class="stats-wrapper">
-					<div class="stats">
-						<p><span>7</span></p>
-						<p>Users</p>
-					</div>
-					<div class="stats">
-						<p><span>927</span></p>
-						<p>Assets</p>
-					</div>
-				</section>
-			</div>
-		</section>
-		
-		<section class="widget small">
-			<header> 
-				<span class="icon">&#9716;</span>
-				<hgroup>
-					<h1>Pie chart</h1>
-					<h2>Display data as pie charts</h2>
-				</hgroup>
-				<aside>
-					<span>
-						<a href="#">&#9881;</a>
-						<ul class="settings-dd">
-							<li><label>Option a</label><input type="checkbox" /></li>
-							<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-							<li><label>Option c</label><input type="checkbox" /></li>
-						</ul>
-					</span>
-				</aside>
-			</header>
-			<div class="content">
-				<div class="pie graph-area">
-				
-				</div>
-			</div>
-		</section>
-	</div>
 </section>
 <script src="js/jquery-1.6.1.min.js"></script>
 <script src="js/jquery.wysiwyg.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/cycle.js"></script>
 <script src="js/jquery.checkbox.min.js"></script>
-<script src="js/flot.js"></script>
+<!--<script src="js/flot.js"></script>
 <script src="js/flot.resize.js"></script>
 <script src="js/flot-time.js"></script>
 <script src="js/flot-pie.js"></script>
 <script src="js/flot-graphs.js"></script>
-<script src="js/cycle.js"></script>
+<script src="js/cycle.js"></script>-->
 <script src="js/jquery.tablesorter.min.js"></script>
-<script type="text/javascript">
-// Feature slider for graphs
-$('.cycle').cycle({
-	fx: "scrollHorz",
-	timeout: 0,
-    slideResize: 0,
-    prev:    '.left-btn', 
-    next:    '.right-btn'
-});
-</script>
+<!--<script src="js/dropzone.js"></script>-->
 </body>
 </html>

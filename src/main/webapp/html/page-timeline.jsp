@@ -86,59 +86,58 @@
 		</span> 
 		<span class="button">Live</span>
 		 <span class="button">Help</span>
-		 <span class="button blue"><a href="index.jsp">Logout</a></span>
+		 <span class="button blue"><a href="index">Logout</a></span>
 	</div>
 </section>
 </div>
 <nav>
 	<ul>
-		<li><a href="dashboard.html"><span class="icon">&#128711;</span> Dashboard</a></li>
-		<li>
-			<a href="pages-table.html"><span class="icon">&#128196;</span> Pages</a>
+		<li><a href="dashboard"><span class="icon">&#128711;</span> Dashboard</a></li>
+		<li class="section">
+			<a href="pages-table"><span class="icon">&#128196;</span> Pages</a>
 			<ul class="submenu">
-				<li><a href="page-new.html">Create page</a></li>
-				<li><a href="page-timeline.html">View pages</a></li>
+				<li><a href="page-new">Create page</a></li>
+				<li><a href="page-timeline">View pages</a></li>
 			</ul>	
 		</li>
 		<li>
-			<a href="files.html"><span class="icon">&#127748;</span> Media <span class="pip">7</span></a>
+			<a href="files"><span class="icon">&#127748;</span> Media <span class="pip">7</span></a>
 			<ul class="submenu">
-				<li><a href="files-upload.html">Upload file</a></li>
-				<li><a href="files.html">View files</a></li>
+				<li><a href="files-upload">Upload file</a></li>
+				<li><a href="files">View files</a></li>
 			</ul>
 		</li>
-		<li class="section">
-			<a href="blog-timeline.html"><span class="icon">&#59160;</span> Blog <span class="pip">12</span></a>
-			<ul class="submenu">
-				<li><a href="blog-new.html">New post</a></li>
-				<li><a href="blog-table.html">All posts</a></li>
-				<li><a href="comments-timeline.html">View comments</a></li>
-			</ul>
-		</li>
-		<li><a href="statistics.html"><span class="icon">&#128202;</span> Statistics</a></li>
-		<li><a href="users.html"><span class="icon">&#128101;</span> Users <span class="pip">3</span></a></li>
 		<li>
-			<a href="ui-elements.html"><span class="icon">&#9881;</span> UI Elements</a>
+			<a href="blog-timeline"><span class="icon">&#59160;</span> Blog <span class="pip">12</span></a>
 			<ul class="submenu">
-				<li><a href="icon-fonts.html">Icon fonts</a></li>
+				<li><a href="blog-new">New post</a></li>
+				<li><a href="blog-table">All posts</a></li>
+				<li><a href="comments-timeline">View comments</a></li>
+			</ul>
+		</li>
+		<li><a href="statistics"><span class="icon">&#128202;</span> Statistics</a></li>
+		<li><a href="users"><span class="icon">&#128101;</span> Users <span class="pip">3</span></a></li>
+		<li>
+			<a href="ui-elements"><span class="icon">&#9881;</span> UI Elements</a>
+			<ul class="submenu">
+				<li><a href="icon-fonts">Icon fonts</a></li>
 			</ul>
 		</li>
 	</ul>
 </nav>
 
-
 <section class="alert">
-	<form method="link" action="blog-new.html">
-		<button class="green">Create new blog page</button>
+	<form method="link" action="page-new">
+		<button class="green">Create new page</button>
 	</form>
 </section>
 <section class="content">
 	<section class="widget">
 		<header>
-			<span class="icon">&#59160;</span>
+			<span class="icon">&#128196;</span>
 			<hgroup>
-				<h1>Blog</h1>
-				<h2>CMS blog pages</h2>
+				<h1>Pages</h1>
+				<h2>CMS content pages</h2>
 			</hgroup>
 			<aside>
 				<span>
@@ -153,45 +152,56 @@
 		</header>
 		<div class="content no-padding timeline">
 			<div class="tl-post">
-				<span class="icon">&#59160;</span>
-				<p><a href="#">The benefits of SEO</a> blog page. <span class="time">Created 15 hours ago</span></p>
+				<span class="icon">&#59185;</span>
+				<p><a href="#">The benefits of SEO</a> blog page. <span class="time">Created 1 hour ago</span></p>
 			</div>
 			<div class="tl-post">
-				<span class="icon">&#59160;</span>
-				<p><a href="#">Web designs of the month</a> blog page. <span class="time">Created 6 days ago</span></p>
+				<span class="icon">&#59185;</span>
+				<p><a href="#">Web designs of the month</a> blog page. <span class="time">Created 2 hours ago</span></p>
 			</div>
 			<div class="tl-post">
-				<span class="icon">&#59160;</span>
-				<p><a href="#">The design history of apple</a> blog page. <span class="time">Created 14 days ago</span></p>
+				<span class="icon">&#59185;</span>
+				<p><a href="#">The design history of apple</a> blog page. <span class="time">Created 9 hours ago</span></p>
 			</div>
 			<div class="tl-post">
-				<span class="icon">&#59160;</span>
-				<p><a href="#">How to design for retina display</a> blog page. <span class="time">Created 25 days ago</span></p>
+				<span class="icon">&#59185;</span>
+				<p><a href="#">How to design for retian display</a> blog page. <span class="time">Created 1 days ago</span></p>
 			</div>
 			<div class="tl-post">
-				<span class="icon">&#59160;</span>
-				<p><a href="#">Responsive design</a> blog page. <span class="time">Created 30 days ago</span></p>
-			</div>
-			
-			<div class="tl-post">
-				<span class="icon">&#59160;</span>
-				<p><a href="#">Sidebar design inspiration</a> blog page. <span class="time">Created 38 days ago</span></p>
+				<span class="icon">&#59185;</span>
+				<p><a href="#">Responsive design</a> blog page. <span class="time">Created 1 days ago</span></p>
 			</div>
 			<div class="tl-post">
-				<span class="icon">&#59160;</span>
-				<p><a href="#">Colours in web design</a> blog page. <span class="time">Created 44 days ago</span></p>
+				<span class="icon">&#9881;</span>
+				<p><a href="#">eCommerce design</a> service page. <span class="time">Created 2 days</span></p>
 			</div>
 			<div class="tl-post">
-				<span class="icon">&#59160;</span>
-				<p><a href="#">How to choose a colour pallette</a> blog page. <span class="time">Created 49 dayss ago</span></p>
+				<span class="icon">&#9881;</span>
+				<p><a href="#">Search engine optimisation</a> service page. <span class="time">Created 2 days ago</span></p>
 			</div>
 			<div class="tl-post">
-				<span class="icon">&#59160;</span>
-				<p><a href="#">The best designs of 2012</a> blog page. <span class="time">Created 51 days ago</span></p>
+				<span class="icon">&#9881;</span>
+				<p><a href="#">Website design</a> service page. <span class="time">Created 2 days ago</span></p>
 			</div>
 			<div class="tl-post">
-				<span class="icon">&#59160;</span>
-				<p><a href="#">The anatomy of design</a> blog page. <span class="time">Created 61 day ago</span></p>
+				<span class="icon">&#128196;</span>
+				<p><a href="#">Home</a> page. <span class="time">Created 2 days ago</span></p>
+			</div>
+			<div class="tl-post">
+				<span class="icon">&#9881;</span>
+				<p><a href="#">Services</a> page. <span class="time">Created 3 days ago</span></p>
+			</div>
+			<div class="tl-post">
+				<span class="icon">&#59185;</span>
+				<p><a href="#">Blog</a> page. <span class="time">Created 3 days ago</span></p>
+			</div>
+			<div class="tl-post">
+				<span class="icon">&#128196;</span>
+				<p><a href="#">About us</a> page. <span class="time">Created 4 days ago</span></p>
+			</div>
+			<div class="tl-post">
+				<span class="icon">&#128196;</span>
+				<p><a href="#">Contact us</a> page. <span class="time">Created 7 days ago</span></p>
 			</div>
 		</div>
 	</section>

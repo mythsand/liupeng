@@ -8,6 +8,7 @@
 	<meta name="robots" content="" />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" href="css/style.css" media="all" />
+	<link rel="stylesheet" href="css/dropzone.css" media="all" />
 	<!--[if IE]><link rel="stylesheet" href="css/ie.css" media="all" /><![endif]-->
 </head>
 <body>
@@ -86,58 +87,59 @@
 		</span> 
 		<span class="button">Live</span>
 		 <span class="button">Help</span>
-		 <span class="button blue"><a href="index.jsp">Logout</a></span>
+		 <span class="button blue"><a href="index">Logout</a></span>
 	</div>
 </section>
 </div>
 <nav>
 	<ul>
-		<li><a href="dashboard.html"><span class="icon">&#128711;</span> Dashboard</a></li>
-		<li class="section">
-			<a href="pages-table.html"><span class="icon">&#128196;</span> Pages</a>
+		<li><a href="dashboard"><span class="icon">&#128711;</span> Dashboard</a></li>
+		<li>
+			<a href="pages-table"><span class="icon">&#128196;</span> Pages</a>
 			<ul class="submenu">
-				<li><a href="page-new.html">Create page</a></li>
-				<li><a href="page-timeline.html">View pages</a></li>
+				<li><a href="page-new">Create page</a></li>
+				<li><a href="page-timeline">View pages</a></li>
 			</ul>	
 		</li>
-		<li>
-			<a href="files.html"><span class="icon">&#127748;</span> Media <span class="pip">7</span></a>
+		<li class="section">
+			<a href="files"><span class="icon">&#127748;</span> Media <span class="pip">7</span></a>
 			<ul class="submenu">
-				<li><a href="files-upload.html">Upload file</a></li>
-				<li><a href="files.html">View files</a></li>
+				<li><a href="files-upload">Upload file</a></li>
+				<li><a href="files">View files</a></li>
 			</ul>
 		</li>
 		<li>
-			<a href="blog-timeline.html"><span class="icon">&#59160;</span> Blog <span class="pip">12</span></a>
+			<a href="blog-timeline"><span class="icon">&#59160;</span> Blog <span class="pip">12</span></a>
 			<ul class="submenu">
-				<li><a href="blog-new.html">New post</a></li>
-				<li><a href="blog-table.html">All posts</a></li>
-				<li><a href="comments-timeline.html">View comments</a></li>
+				<li><a href="blog-new">New post</a></li>
+				<li><a href="blog-table">All posts</a></li>
+				<li><a href="comments-timeline">View comments</a></li>
 			</ul>
 		</li>
-		<li><a href="statistics.html"><span class="icon">&#128202;</span> Statistics</a></li>
-		<li><a href="users.html"><span class="icon">&#128101;</span> Users <span class="pip">3</span></a></li>
+		<li><a href="statistics"><span class="icon">&#128202;</span> Statistics</a></li>
+		<li><a href="users"><span class="icon">&#128101;</span> Users <span class="pip">3</span></a></li>
 		<li>
-			<a href="ui-elements.html"><span class="icon">&#9881;</span> UI Elements</a>
+			<a href="ui-elements"><span class="icon">&#9881;</span> UI Elements</a>
 			<ul class="submenu">
-				<li><a href="icon-fonts.html">Icon fonts</a></li>
+				<li><a href="icon-fonts">Icon fonts</a></li>
 			</ul>
 		</li>
 	</ul>
 </nav>
 
 <section class="alert">
-	<form method="link" action="page-new.html">
-		 <button class="green">Create new page</button>
-	</form>
+	<div class="green">	
+		<p>Hi Lee, you have <a href="#">3 new pages</a> and <a href="#">16 comments</a> to approve, better get going!</p>
+		<span class="close">&#10006;</span>
+	</div>
 </section>
 <section class="content">
 	<section class="widget">
 		<header>
-			<span class="icon">&#128196;</span>
+			<span class="icon">&#59153;</span>
 			<hgroup>
-				<h1>Pages</h1>
-				<h2>CMS content pages</h2>
+				<h1>File upload</h1>
+				<h2>Drag &amp drop file upload</h2>
 			</hgroup>
 			<aside>
 				<span>
@@ -151,95 +153,23 @@
 			</aside>
 		</header>
 		<div class="content">
-			<table id="myTable" border="0" width="100">
-				<thead>
-					<tr>
-						<th>Page title</th>
-						<th >Date</th>
-						<th>Child pages</th>
-						<th>Comments</th>
-						<th>Author</th>
-					</tr>
-				</thead>
-					<tbody>
-						<tr>
-							<td><input type="checkbox" /> Home</td>
-							<td>01/3/2013</td>
-							<td>0</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Services</td>
-							<td>01/3/2013</td>
-							<td>4</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Portfolio</td>
-							<td>02/3/2013</td>
-							<td>12</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> About us</td>
-							<td>02/3/2013</td>
-							<td>2</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Blog</td>
-							<td>02/3/2013</td>
-							<td>32</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Contact us</td>
-							<td>03/3/2013</td>
-							<td>0</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Our clients</td>
-							<td>04/3/2013</td>
-							<td>1</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Partnerships</td>
-							<td>04/3/2013</td>
-							<td>0</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" />Jobs</td>
-							<td>04/3/2013</td>
-							<td>0</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-					</tbody>
-				</table>
+			<div id="dropzone">
+				<form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+			</div>
 		</div>
 	</section>
 </section>
 <script src="js/jquery-1.6.1.min.js"></script>
 <script src="js/jquery.wysiwyg.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/cycle.js"></script>
 <script src="js/jquery.checkbox.min.js"></script>
-<script src="js/flot.js"></script>
+<!--<script src="js/flot.js"></script>
 <script src="js/flot.resize.js"></script>
-<script src="js/flot-graphs.js"></script>
 <script src="js/flot-time.js"></script>
-<script src="js/cycle.js"></script>
+<script src="js/flot-pie.js"></script>
+<script src="js/flot-graphs.js"></script>
+<script src="js/cycle.js"></script>-->
 <script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/dropzone.js"></script>
 </body>
 </html>
