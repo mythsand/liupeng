@@ -26,7 +26,7 @@ public class AdminController {
     }
     @RequestMapping("blog-table")
     public String blogTimeline(){
-        return "/html/blog-timeline";
+        return "/blog-table";
     }
     @RequestMapping("comments-timeline")
     public String commentsTimeLine(){
@@ -52,6 +52,8 @@ public class AdminController {
     public String pageTable(){
         return "/html/page-table";
     }
+    @RequestMapping("page-timeline")
+    public String pageTimeLine(){return "/page-timeline";}
     @RequestMapping("statistics")
     public String statistics(){
         return "/html/statistics";
@@ -65,4 +67,6 @@ public class AdminController {
     public String test(){
         return "/html/test";
     }
+    @RequestMapping("/admin/project")
+    public String adminProject(){return "/admin/project";}
 }

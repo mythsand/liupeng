@@ -1,6 +1,4 @@
 #  `init`
-<<<<<<< HEAD
 * --mhw
-=======
 * mhw../
->>>>>>> test
+* This is a test.
