@@ -1,26 +1,26 @@
 package com.liupeng.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Collection;
 
 /**
- * Created by mythsand on 12/04/2017.
+ * Created by mythsand on 22/04/2017.
  */
 @Entity
 @Table(name = "project", schema = "liupeng", catalog = "")
-public class ProjectEntity {
+public class ProjectEntity implements Serializable {
     private int id;
-    private String name;
-    private Date date;
-    private String path;
-    private Integer grade;
-    private String judge;
-    private int projectId;
-    private StudentEntity projectByStu;
-//    private Collection<TeacherEntity> ProjectByTea;
-    private int stuNum;
-    private int teaNum;
+    private String projectNo;
+    private String teamNo;
+    private String title;
+    private Date startDate;
+    private Date endDate;
+    private String description;
+    private Collection<TeamEntity> teamByProject;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -33,63 +33,63 @@ public class ProjectEntity {
     }
 
     @Basic
-    @Column(name = "name", nullable = false, length = 50)
-    public String getName() {
-        return name;
+    @Column(name = "project_no", nullable = false, length = 11)
+    public String getProjectNo() {
+        return projectNo;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Basic
-    @Column(name = "date", nullable = false)
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
+    public void setProjectNo(String projectNo) {
+        this.projectNo = projectNo;
     }
 
     @Basic
-    @Column(name = "path", nullable = false, length = 100)
-    public String getPath() {
-        return path;
+    @Column(name = "team_no", nullable = true, length = 11)
+    public String getTeamNo() {
+        return teamNo;
     }
 
-    public void setPath(String path) {
-        this.path = path;
-    }
-
-    @Basic
-    @Column(name = "grade", nullable = true)
-    public Integer getGrade() {
-        return grade;
-    }
-
-    public void setGrade(Integer grade) {
-        this.grade = grade;
+    public void setTeamNo(String teamNo) {
+        this.teamNo = teamNo;
     }
 
     @Basic
-    @Column(name = "judge", nullable = true, length = 255)
-    public String getJudge() {
-        return judge;
+    @Column(name = "title", nullable = false, length = 220)
+    public String getTitle() {
+        return title;
     }
 
-    public void setJudge(String judge) {
-        this.judge = judge;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     @Basic
-    @Column(name = "project_id", nullable = false)
-    public int getProjectId() {
-        return projectId;
+    @Column(name = "start_date", nullable = true)
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    @Basic
+    @Column(name = "end_date", nullable = true)
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    @Basic
+    @Column(name = "description", nullable = true, length = -1)
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -100,12 +100,12 @@ public class ProjectEntity {
         ProjectEntity that = (ProjectEntity) o;
 
         if (id != that.id) return false;
-        if (projectId != that.projectId) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (date != null ? !date.equals(that.date) : that.date != null) return false;
-        if (path != null ? !path.equals(that.path) : that.path != null) return false;
-        if (grade != null ? !grade.equals(that.grade) : that.grade != null) return false;
-        if (judge != null ? !judge.equals(that.judge) : that.judge != null) return false;
+        if (projectNo != null ? !projectNo.equals(that.projectNo) : that.projectNo != null) return false;
+        if (teamNo != null ? !teamNo.equals(that.teamNo) : that.teamNo != null) return false;
+        if (title != null ? !title.equals(that.title) : that.title != null) return false;
+        if (startDate != null ? !startDate.equals(that.startDate) : that.startDate != null) return false;
+        if (endDate != null ? !endDate.equals(that.endDate) : that.endDate != null) return false;
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
 
         return true;
     }
@@ -113,51 +113,22 @@ public class ProjectEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (path != null ? path.hashCode() : 0);
-        result = 31 * result + (grade != null ? grade.hashCode() : 0);
-        result = 31 * result + (judge != null ? judge.hashCode() : 0);
-        result = 31 * result + projectId;
+        result = 31 * result + (projectNo != null ? projectNo.hashCode() : 0);
+        result = 31 * result + (teamNo != null ? teamNo.hashCode() : 0);
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
+        result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
         return result;
     }
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "stu_num", referencedColumnName = "num", nullable = false, insertable=false, updatable=false)
-    public StudentEntity getProjectByStu() {
-        return projectByStu;
+    @OneToMany(mappedBy = "projectByTeam")
+    @JsonIgnore
+    public Collection<TeamEntity> getTeamByProject() {
+        return teamByProject;
     }
 
-    public void setProjectByStu(StudentEntity projectByStu) {
-        this.projectByStu = projectByStu;
-    }
-
-//    @OneToMany(mappedBy = "TeacherByProject")
-//    public Collection<TeacherEntity> getProjectByTea() {
-//        return ProjectByTea;
-//    }
-//
-//    public void setProjectByTea(Collection<TeacherEntity> projectByTea) {
-//        ProjectByTea = projectByTea;
-//    }
-
-    @Basic
-    @Column(name = "stu_num", nullable = false)
-    public int getStuNum() {
-        return stuNum;
-    }
-
-    public void setStuNum(int stuNum) {
-        this.stuNum = stuNum;
-    }
-
-    @Basic
-    @Column(name = "tea_num", nullable = false)
-    public int getTeaNum() {
-        return teaNum;
-    }
-
-    public void setTeaNum(int teaNum) {
-        this.teaNum = teaNum;
+    public void setTeamByProject(Collection<TeamEntity> teamByProject) {
+        this.teamByProject = teamByProject;
     }
 }

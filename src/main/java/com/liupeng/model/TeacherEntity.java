@@ -1,30 +1,26 @@
 package com.liupeng.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Collection;
 
 /**
- * Created by mythsand on 12/04/2017.
+ * Created by mythsand on 22/04/2017.
  */
 @Entity
-@Table(name = "teacher", schema = "liupeng", catalog = "")
-public class TeacherEntity {
-    private int num;
+@Table(name = "teacher", schema = "liupeng")
+public class TeacherEntity implements Serializable {
     private String name;
     private String passwd;
-    private ProjectEntity TeacherByProject;
-
-    @Id
-    @Column(name = "num", nullable = false)
-    public int getNum() {
-        return num;
-    }
-
-    public void setNum(int num) {
-        this.num = num;
-    }
+    private int id;
+    private String teaNo;
+    private String college;
+    private Collection<TeamEntity> teamByTeacher;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 11)
+    @Column(name = "name", nullable = true, length = 20)
     public String getName() {
         return name;
     }
@@ -34,13 +30,43 @@ public class TeacherEntity {
     }
 
     @Basic
-    @Column(name = "passwd", nullable = false, length = 25)
+    @Column(name = "passwd", nullable = true, length = 11)
     public String getPasswd() {
         return passwd;
     }
 
     public void setPasswd(String passwd) {
         this.passwd = passwd;
+    }
+
+    @Id
+    @Column(name = "id", nullable = false)
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Basic
+    @Column(name = "tea_no", nullable = true, length = 11)
+    public String getTeaNo() {
+        return teaNo;
+    }
+
+    public void setTeaNo(String teaNo) {
+        this.teaNo = teaNo;
+    }
+
+    @Basic
+    @Column(name = "college", nullable = true, length = 2)
+    public String getCollege() {
+        return college;
+    }
+
+    public void setCollege(String college) {
+        this.college = college;
     }
 
     @Override
@@ -50,28 +76,32 @@ public class TeacherEntity {
 
         TeacherEntity that = (TeacherEntity) o;
 
-        if (num != that.num) return false;
+        if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (passwd != null ? !passwd.equals(that.passwd) : that.passwd != null) return false;
+        if (teaNo != null ? !teaNo.equals(that.teaNo) : that.teaNo != null) return false;
+        if (college != null ? !college.equals(that.college) : that.college != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = num;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (passwd != null ? passwd.hashCode() : 0);
+        result = 31 * result + id;
+        result = 31 * result + (teaNo != null ? teaNo.hashCode() : 0);
+        result = 31 * result + (college != null ? college.hashCode() : 0);
         return result;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "num", referencedColumnName = "tea_num", nullable = false, insertable=false, updatable=false)
-    public ProjectEntity getTeacherByProject() {
-        return TeacherByProject;
+    @OneToMany(mappedBy = "teacherByTeam")
+    @JsonIgnore
+    public Collection<TeamEntity> getTeamByTeacher() {
+        return teamByTeacher;
     }
 
-    public void setTeacherByProject(ProjectEntity teacherByProject) {
-        TeacherByProject = teacherByProject;
+    public void setTeamByTeacher(Collection<TeamEntity> teamByTeacher) {
+        this.teamByTeacher = teamByTeacher;
     }
 }

@@ -62,7 +62,6 @@ public class AdminController {
     public String uiElements(){
         return "/html/ui-elements";
     }
-
     @RequestMapping("test")
     public String test(){
         return "/html/test";

@@ -1,31 +1,37 @@
 package com.liupeng.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 
 /**
- * Created by mythsand on 12/04/2017.
+ * Created by mythsand on 22/04/2017.
  */
 @Entity
-@Table(name = "student", schema = "liupeng", catalog = "")
-public class StudentEntity {
-    private int num;
+@Table(name = "student", schema = "liupeng")
+public class StudentEntity implements Serializable {
     private String name;
     private String passwd;
-    private Collection<ProjectEntity> StudentByProject;
-
-    @Id
-    @Column(name = "num", nullable = false)
-    public int getNum() {
-        return num;
-    }
-
-    public void setNum(int num) {
-        this.num = num;
-    }
+    private int id;
+    private String stuNo;
+    private String college;
+    private int memberByTeamId;
+    private Collection<TeamEntity> teamByLeader;
+//    private Collection<TeamEntity> teamByMember;
+//    @ManyToMany(mappedBy = "memberByTeam")
+//    public Collection<TeamEntity> getTeamByMember() {
+//        return teamByMember;
+//    }
+//
+//    public void setTeamByMember(Collection<TeamEntity> teamByMember) {
+//        this.teamByMember = teamByMember;
+//    }
+//    private TeamEntity teamByMember;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 11)
+    @Column(name = "name", nullable = true, length = 20)
     public String getName() {
         return name;
     }
@@ -35,13 +41,53 @@ public class StudentEntity {
     }
 
     @Basic
-    @Column(name = "passwd", nullable = false, length = 25)
+    @Column(name = "passwd", nullable = true, length = 11)
     public String getPasswd() {
         return passwd;
     }
 
     public void setPasswd(String passwd) {
         this.passwd = passwd;
+    }
+
+    @Id
+    @Column(name = "id", nullable = false)
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Basic
+    @Column(name = "stu_no", nullable = true, length = 11)
+    public String getStuNo() {
+        return stuNo;
+    }
+
+    public void setStuNo(String stuNo) {
+        this.stuNo = stuNo;
+    }
+
+    @Basic
+    @Column(name = "college", nullable = true, length = 2)
+    public String getCollege() {
+        return college;
+    }
+
+    public void setCollege(String college) {
+        this.college = college;
+    }
+
+    @Basic
+    @Column(name = "memberByTeam_id", nullable = false)
+    public int getMemberByTeamId() {
+        return memberByTeamId;
+    }
+
+    public void setMemberByTeamId(int memberByTeamId) {
+        this.memberByTeamId = memberByTeamId;
     }
 
     @Override
@@ -51,27 +97,44 @@ public class StudentEntity {
 
         StudentEntity that = (StudentEntity) o;
 
-        if (num != that.num) return false;
+        if (id != that.id) return false;
+        if (memberByTeamId != that.memberByTeamId) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (passwd != null ? !passwd.equals(that.passwd) : that.passwd != null) return false;
+        if (stuNo != null ? !stuNo.equals(that.stuNo) : that.stuNo != null) return false;
+        if (college != null ? !college.equals(that.college) : that.college != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = num;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (passwd != null ? passwd.hashCode() : 0);
+        result = 31 * result + id;
+        result = 31 * result + (stuNo != null ? stuNo.hashCode() : 0);
+        result = 31 * result + (college != null ? college.hashCode() : 0);
+        result = 31 * result + memberByTeamId;
         return result;
     }
 
-    @OneToMany(mappedBy = "projectByStu")
-    public Collection<ProjectEntity> getStudentByProject() {
-        return StudentByProject;
+    @OneToMany(mappedBy = "leaderByTeam")
+    @JsonIgnore
+    public Collection<TeamEntity> getTeamByLeader() {
+        return teamByLeader;
     }
 
-    public void setStudentByProject(Collection<ProjectEntity> studentByProject) {
-        StudentByProject = studentByProject;
+    public void setTeamByLeader(Collection<TeamEntity> teamByLeader) {
+        this.teamByLeader = teamByLeader;
     }
+
+//    @ManyToOne
+//    @JoinColumn(name = "stu_no", referencedColumnName = "member_no", insertable = false, updatable = false)
+//    public TeamEntity getTeamByMember() {
+//        return teamByMember;
+//    }
+//
+//    public void setTeamByMember(TeamEntity teamByMember) {
+//        this.teamByMember = teamByMember;
+//    }
 }
