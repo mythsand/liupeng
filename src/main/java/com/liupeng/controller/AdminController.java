@@ -25,8 +25,12 @@ public class AdminController {
         return "/html/blog-new";
     }
     @RequestMapping("blog-table")
+    public String blogTable(){
+        return "/html/blog-table";
+    }
+    @RequestMapping("blog-timeline")
     public String blogTimeline(){
-        return "/blog-table";
+        return "/html/blog-timeline";
     }
     @RequestMapping("comments-timeline")
     public String commentsTimeLine(){
@@ -48,12 +52,12 @@ public class AdminController {
     public String pageNew(){
         return "/html/page-new";
     }
-    @RequestMapping("page-table")
+    @RequestMapping("pages-table")
     public String pageTable(){
-        return "/html/page-table";
+        return "/html/pages-table";
     }
     @RequestMapping("page-timeline")
-    public String pageTimeLine(){return "/page-timeline";}
+    public String pageTimeLine(){return "/html/page-timeline";}
     @RequestMapping("statistics")
     public String statistics(){
         return "/html/statistics";
@@ -62,9 +66,9 @@ public class AdminController {
     public String uiElements(){
         return "/html/ui-elements";
     }
-    @RequestMapping("test")
-    public String test(){
-        return "/html/test";
+    @RequestMapping("users")
+    public String users(){
+        return "/html/users";
     }
     @RequestMapping("/admin/project")
     public String adminProject(){return "/admin/project";}
