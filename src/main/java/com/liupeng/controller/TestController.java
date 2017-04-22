@@ -29,10 +29,13 @@ public class TestController {
         List stu = projectRepository.findAll();
         stu.addAll(stuRepository.findAll());
         stu.addAll(adminRepository.findAll());
-//        stu.addAll(proj
-// ectRepository.findAll());
+//        stu.addAll(projectRepository.findAll());
 
         return stu;
+    }
+    @RequestMapping("project")
+    public String project(){
+        return "/admin/project";
     }
 
 }
