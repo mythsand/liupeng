@@ -87,8 +87,7 @@ public class StudentController {
     public String users(){
         return "/stu/users";
     }
-    @RequestMapping("/admin/project")
-    public String adminProject(){return "/admin/project";}
+
     @RequestMapping(value = "file-upload", method = RequestMethod.POST)
     public String fileUpload(@RequestParam("file")MultipartFile file, @RequestParam("project_id")String projectid){
         String projectId = projectid;

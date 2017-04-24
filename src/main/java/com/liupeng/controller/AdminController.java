@@ -1,13 +1,24 @@
 package com.liupeng.controller;
 
+import com.liupeng.model.ProjectEntity;
+import com.liupeng.repository.ProjectRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 /**
  * Created by mythsand on 12/html/04/html/2017.
  */
 @Controller
 public class AdminController {
+
+    @Autowired
+    ProjectRepository projectRepository;
+
     @RequestMapping("index")
     public String index(){
         return "/html/index";
@@ -70,6 +81,16 @@ public class AdminController {
     public String users(){
         return "/html/users";
     }
-    @RequestMapping("/admin/project")
-    public String adminProject(){return "/admin/project";}
+    @RequestMapping("adminProjectList")
+    public String adminProjectList(ModelMap modelMap){
+        List<ProjectEntity> projectEntities=projectRepository.findAll();
+        System.out.println(projectEntities.size());
+        modelMap.addAttribute("projects",projectEntities);
+        return "/admin/project-list";
+    }
+    @RequestMapping("adminProjectChange")
+    public String adminProjectChange(@RequestParam String project_no,@RequestParam String title){
+        System.out.print(title);
+        return "admin/project-change";
+    }
 }
