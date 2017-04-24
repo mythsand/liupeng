@@ -96,18 +96,36 @@
       <Comment>项目描述</Comment>
       <DataType>text|0</DataType>
     </column>
-    <index id="26" parent="9" name="project_no">
+    <column id="26" parent="9" name="file">
+      <Position>8</Position>
+      <Comment>文件名</Comment>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <column id="27" parent="9" name="file_path">
+      <Position>9</Position>
+      <Comment>文件路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="28" parent="9" name="project_no">
       <ColNames>project_no</ColNames>
     </index>
-    <index id="27" parent="9" name="team_no">
+    <index id="29" parent="9" name="team_no">
       <ColNames>team_no</ColNames>
     </index>
-    <key id="28" parent="9" name="PRIMARY">
+    <index id="30" parent="9" name="UK_lkjcmvswnybawjhwdb248jd6l">
+      <ColNames>team_no</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="31" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="29" parent="9" name="team_no">
+    <key id="32" parent="9" name="UK_lkjcmvswnybawjhwdb248jd6l">
+      <ColNames>team_no</ColNames>
+      <UnderlyingIndexName>UK_lkjcmvswnybawjhwdb248jd6l</UnderlyingIndexName>
+    </key>
+    <foreign-key id="33" parent="9" name="team_no">
       <ColNames>team_no</ColNames>
       <RefSchemaName>liupeng</RefSchemaName>
       <RefTableName>team</RefTableName>
@@ -115,162 +133,174 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="30" parent="10" name="name">
+    <column id="34" parent="10" name="name">
       <Position>3</Position>
       <Comment>学生姓名</Comment>
       <DataType>varchar(20)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="31" parent="10" name="passwd">
+    <column id="35" parent="10" name="passwd">
       <Position>4</Position>
       <Comment>学生密码</Comment>
       <DataType>varchar(11)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="32" parent="10" name="id">
+    <column id="36" parent="10" name="id">
       <Position>1</Position>
       <Comment>序号</Comment>
       <DataType>int(11) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="33" parent="10" name="stu_no">
+    <column id="37" parent="10" name="stu_no">
       <Position>2</Position>
       <Comment>学生编号</Comment>
       <DataType>varchar(11)|0</DataType>
     </column>
-    <column id="34" parent="10" name="college">
+    <column id="38" parent="10" name="college">
       <Position>5</Position>
       <Comment>学生所在学院</Comment>
       <DataType>varchar(2)|0</DataType>
       <DefaultExpression>&apos;CS&apos;</DefaultExpression>
     </column>
-    <column id="35" parent="10" name="memberByTeam_id">
+    <column id="39" parent="10" name="memberByTeam_id">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="36" parent="10" name="stu_no">
+    <index id="40" parent="10" name="stu_no">
       <ColNames>stu_no</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="37" parent="10" name="UK_b1ggu35pdyrx7axo2picy706s">
+    <index id="41" parent="10" name="UK_b1ggu35pdyrx7axo2picy706s">
       <ColNames>stu_no</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="38" parent="10" name="PRIMARY">
+    <key id="42" parent="10" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="39" parent="10" name="UK_b1ggu35pdyrx7axo2picy706s">
+    <key id="43" parent="10" name="UK_b1ggu35pdyrx7axo2picy706s">
       <ColNames>stu_no</ColNames>
       <UnderlyingIndexName>UK_b1ggu35pdyrx7axo2picy706s</UnderlyingIndexName>
     </key>
-    <key id="40" parent="10" name="stu_no">
+    <key id="44" parent="10" name="stu_no">
       <ColNames>stu_no</ColNames>
       <UnderlyingIndexName>stu_no</UnderlyingIndexName>
     </key>
-    <column id="41" parent="11" name="name">
+    <column id="45" parent="11" name="name">
       <Position>3</Position>
       <Comment>教师姓名</Comment>
       <DataType>varchar(20)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="42" parent="11" name="passwd">
+    <column id="46" parent="11" name="passwd">
       <Position>4</Position>
       <Comment>教师密码</Comment>
       <DataType>varchar(11)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="43" parent="11" name="id">
+    <column id="47" parent="11" name="id">
       <Position>1</Position>
       <Comment>序号</Comment>
       <DataType>int(11) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="44" parent="11" name="tea_no">
+    <column id="48" parent="11" name="tea_no">
       <Position>2</Position>
       <Comment>教师工号</Comment>
       <DataType>varchar(11)|0</DataType>
     </column>
-    <column id="45" parent="11" name="college">
+    <column id="49" parent="11" name="college">
       <Position>5</Position>
       <Comment>教师所属学院</Comment>
       <DataType>char(2)|0</DataType>
       <DefaultExpression>&apos;CS&apos;</DefaultExpression>
     </column>
-    <index id="46" parent="11" name="tea_no">
+    <index id="50" parent="11" name="tea_no">
       <ColNames>tea_no</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="47" parent="11" name="UK_53dwi7gctc9dt2472ract4get">
+    <index id="51" parent="11" name="UK_53dwi7gctc9dt2472ract4get">
       <ColNames>tea_no</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="48" parent="11" name="PRIMARY">
+    <key id="52" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="49" parent="11" name="UK_53dwi7gctc9dt2472ract4get">
+    <key id="53" parent="11" name="UK_53dwi7gctc9dt2472ract4get">
       <ColNames>tea_no</ColNames>
       <UnderlyingIndexName>UK_53dwi7gctc9dt2472ract4get</UnderlyingIndexName>
     </key>
-    <key id="50" parent="11" name="tea_no">
+    <key id="54" parent="11" name="tea_no">
       <ColNames>tea_no</ColNames>
       <UnderlyingIndexName>tea_no</UnderlyingIndexName>
     </key>
-    <column id="51" parent="12" name="id">
+    <column id="55" parent="12" name="id">
       <Position>1</Position>
       <DataType>int(11) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="52" parent="12" name="team_no">
+    <column id="56" parent="12" name="team_no">
       <Position>2</Position>
       <Comment>团队编号</Comment>
       <DataType>varchar(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="53" parent="12" name="tea_no">
+    <column id="57" parent="12" name="tea_no">
       <Position>3</Position>
       <Comment>教师编号</Comment>
       <DataType>varchar(11)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="54" parent="12" name="leader_no">
+    <column id="58" parent="12" name="leader_no">
       <Position>4</Position>
       <Comment>组长的学生号</Comment>
       <DataType>varchar(11)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="55" parent="12" name="member_no">
+    <column id="59" parent="12" name="member_no">
       <Position>5</Position>
       <Comment>队员的学生号</Comment>
       <DataType>varchar(11)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <index id="56" parent="12" name="leader_no">
+    <index id="60" parent="12" name="leader_no">
       <ColNames>leader_no</ColNames>
     </index>
-    <index id="57" parent="12" name="member_no">
+    <index id="61" parent="12" name="member_no">
       <ColNames>member_no</ColNames>
     </index>
-    <index id="58" parent="12" name="team_no">
+    <index id="62" parent="12" name="team_no">
       <ColNames>team_no</ColNames>
     </index>
-    <index id="59" parent="12" name="tea_no">
+    <index id="63" parent="12" name="tea_no">
       <ColNames>tea_no</ColNames>
     </index>
-    <key id="60" parent="12" name="PRIMARY">
+    <key id="64" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="61" parent="12" name="tea_no">
+    <foreign-key id="65" parent="12" name="FK9jkcudhyhvw2aboww9ng6683u">
+      <ColNames>team_no</ColNames>
+      <RefSchemaName>liupeng</RefSchemaName>
+      <RefTableName>project</RefTableName>
+      <RefColNames>team_no</RefColNames>
+    </foreign-key>
+    <foreign-key id="66" parent="12" name="FKjppon5ln167yh0gj8k1ou6a5w">
+      <ColNames>tea_no</ColNames>
+      <RefSchemaName>liupeng</RefSchemaName>
+      <RefTableName>teacher</RefTableName>
+      <RefColNames>tea_no</RefColNames>
+    </foreign-key>
+    <foreign-key id="67" parent="12" name="tea_no">
       <ColNames>tea_no</ColNames>
       <RefSchemaName>liupeng</RefSchemaName>
       <RefTableName>teacher</RefTableName>
@@ -278,16 +308,14 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>set-null</OnDelete>
     </foreign-key>
-    <foreign-key id="62" parent="12" name="leader_no">
+    <foreign-key id="68" parent="12" name="FK32dctxqtjf66neft5craeusyu">
       <ColNames>leader_no</ColNames>
       <RefSchemaName>liupeng</RefSchemaName>
       <RefTableName>student</RefTableName>
       <RefColNames>stu_no</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>set-null</OnDelete>
     </foreign-key>
-    <foreign-key id="63" parent="12" name="member_nno">
-      <ColNames>member_no</ColNames>
+    <foreign-key id="69" parent="12" name="leader_no">
+      <ColNames>leader_no</ColNames>
       <RefSchemaName>liupeng</RefSchemaName>
       <RefTableName>student</RefTableName>
       <RefColNames>stu_no</RefColNames>

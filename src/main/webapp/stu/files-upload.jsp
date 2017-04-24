@@ -155,7 +155,11 @@
 		</header>
 		<div class="content">
 			<div id="dropzone">
-				<form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+				<form action="/stu/file-upload" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data", method="post">
+					<div><p>项目编号：</p><input class="field-wrap" type="text" name="project_id"></div>
+					<div><p class="processing">上传文件：</p><input type="file" name="file"></div>
+					<input type="submit" value="提交">
+				</form>
 			</div>
 		</div>
 	</section>
