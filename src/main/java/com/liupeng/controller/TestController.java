@@ -5,7 +5,6 @@ import com.liupeng.repository.ProjectRepository;
 import com.liupeng.repository.StuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -35,7 +34,7 @@ public class TestController {
     }
     @RequestMapping("project")
     public String project(){
-        return "/admin/project";
+        return "/admin/project-list";
     }
 
 }

@@ -72,5 +72,5 @@ public class StudentController {
         return "/stu/users";
     }
     @RequestMapping("/admin/project")
-    public String adminProject(){return "/admin/project";}
+    public String adminProject(){return "/admin/project-list";}
 }
