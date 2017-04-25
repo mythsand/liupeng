@@ -24,4 +24,5 @@ public interface ProjectRepository extends JpaRepository<ProjectEntity, Integer>
 //            "project.startDate=:qStartDate,project.endDate=:qEndDate,project.description=:qDescription where project.projectNo=:qProjectNo")
 //    void updateProjectByProjectNo(@Param("qTeamNo") String teamNo, @Param("qTitle") String title, @Param("qstartDate")Date startDate,
 //    @Param("qEndDate") Date endDate,@Param("qDescription") String description,@Param("qProjectNo") String projectNo);
+//    void updateByProjectNo(String projectNo,String teamNo,String title,Date startDate,Date endDate,String description);
 }

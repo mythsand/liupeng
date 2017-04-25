@@ -1,14 +1,20 @@
 package com.liupeng.controller;
 
+import com.liupeng.model.AdminEntity;
 import com.liupeng.model.ProjectEntity;
+import com.liupeng.repository.AdminRepository;
 import com.liupeng.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * Created by mythsand on 12/html/04/html/2017.
@@ -18,6 +24,7 @@ public class AdminController {
 
     @Autowired
     ProjectRepository projectRepository;
+    AdminRepository adminRepository;
 
     @RequestMapping("index")
     public String index(){
@@ -92,5 +99,10 @@ public class AdminController {
     public String adminProjectChange(@RequestParam String project_no,@RequestParam String title){
         System.out.print(title);
         return "admin/project-change";
+    }
+    @RequestMapping(value = "adminChangePasswd" ,method= GET)
+    public String adminChangePasswd(){
+        adminRepository.updatePasswd("asdf","admin");
+        return "admin/project-list";
     }
 }
