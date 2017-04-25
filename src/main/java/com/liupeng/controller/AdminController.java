@@ -2,8 +2,10 @@ package com.liupeng.controller;
 
 import com.liupeng.model.AdminEntity;
 import com.liupeng.model.ProjectEntity;
+import com.liupeng.model.StudentEntity;
 import com.liupeng.repository.AdminRepository;
 import com.liupeng.repository.ProjectRepository;
+import com.liupeng.repository.StuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -28,6 +30,8 @@ public class AdminController {
     ProjectRepository projectRepository;
     @Autowired
     AdminRepository adminRepository;
+    @Autowired
+    StuRepository stuRepository;
 
     @RequestMapping("index")
     public String index(){
@@ -109,6 +113,21 @@ public class AdminController {
         List<ProjectEntity> projectEntities=projectRepository.findAll();
         modelMap.addAttribute("projects",projectEntities);
         return "admin/project-list";
+    }
+    //查看学生列表
+    @RequestMapping(value = "admin-student-list",method = GET)
+    public String studentList(ModelMap modelMap){
+        List<StudentEntity> studentEntityList=stuRepository.findAll();
+        modelMap.addAttribute("students",studentEntityList);
+        return "admin/student-list";
+    }
+    //根据姓名查看学生的详细信息
+    @RequestMapping(value = "admin-student-detail",method = GET)
+    public String studentDetail(@RequestParam String name,ModelMap modelMap){
+        StudentEntity student=stuRepository.findByName(name);
+//        System.out.print(student.getName());
+        modelMap.addAttribute(student);
+        return "admin/student-detail";
     }
     @RequestMapping(value = "adminChangePasswd" ,method= GET)
     public String adminChangePasswd(){

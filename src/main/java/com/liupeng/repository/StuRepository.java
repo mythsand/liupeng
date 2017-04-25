@@ -18,4 +18,5 @@ public interface StuRepository extends JpaRepository<StudentEntity, Integer>{
     @Query("update ProjectEntity project set project.filePath = ?1, project.file = ?2 where project.projectNo = ?3")
     int saveFile(String file, String fileName, String projectId);
 
+    StudentEntity findByName(String name);
 }
