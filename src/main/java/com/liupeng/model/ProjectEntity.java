@@ -21,6 +21,8 @@ public class ProjectEntity implements Serializable {
     private Date endDate;
     private String description;
     private Collection<TeamEntity> teamByProject;
+    private String file;
+    private String filePath;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -130,5 +132,25 @@ public class ProjectEntity implements Serializable {
 
     public void setTeamByProject(Collection<TeamEntity> teamByProject) {
         this.teamByProject = teamByProject;
+    }
+
+    @Basic
+    @Column(name = "file", nullable = true, length = 255)
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+
+    @Basic
+    @Column(name = "file_path", nullable = true, length = 255)
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
     }
 }

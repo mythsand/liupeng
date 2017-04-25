@@ -1,7 +1,16 @@
 package com.liupeng.controller;
 
+import com.liupeng.repository.StuRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by mythsand on 17/04/2017.
@@ -9,6 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("stu")
 public class StudentController {
+
+    @Autowired
+    HttpServletRequest httpServletRequest;
+
+    @Autowired
+    StuRepository stuRepository;
+
     @RequestMapping("index")
     public String index(){
         return "/stu/index";
@@ -71,6 +87,21 @@ public class StudentController {
     public String users(){
         return "/stu/users";
     }
-    @RequestMapping("/admin/project")
-    public String adminProject(){return "/admin/project-list";}
+
+    @RequestMapping(value = "file-upload", method = RequestMethod.POST)
+    public String fileUpload(@RequestParam("file")MultipartFile file, @RequestParam("project_id")String projectid){
+        String projectId = projectid;
+        if(!file.isEmpty()){
+            String filepath = httpServletRequest.getSession().getServletContext().getRealPath("/")+"upload/"
+                    + file.getOriginalFilename();
+            System.out.println("filepath is : "+ filepath);
+            try {
+                file.transferTo(new File(filepath));
+                stuRepository.saveFile(file.getOriginalFilename(), filepath, projectId);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return "/stu/files-upload";
+    }
 }
