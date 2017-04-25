@@ -118,7 +118,7 @@
 		<%--</ul>--%>
 		<%--</li>--%>
 		<%--<li><a href="statistics"><span class="icon">&#128202;</span> Statistics</a></li>--%>
-		<li><a href="pages-table"><span class="icon">&#128101;</span> 信息查询 <span class="pip"></span></a></li>
+		<li><a href="pages-table"><span class="icon">&#128101;</span> 成员信息 <span class="pip"></span></a></li>
 		<%--<li>--%>
 		<%--<a href="ui-elements"><span class="icon">&#9881;</span> UI Elements</a>--%>
 		<%--<ul class="submenu">--%>

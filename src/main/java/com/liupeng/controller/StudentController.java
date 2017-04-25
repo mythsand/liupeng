@@ -1,12 +1,15 @@
 package com.liupeng.controller;
 
+import com.liupeng.repository.ProjectRepository;
 import com.liupeng.repository.StuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -24,6 +27,9 @@ public class StudentController {
 
     @Autowired
     StuRepository stuRepository;
+
+    @Autowired
+    ProjectRepository projectRepository;
 
     @RequestMapping("index")
     public String index(){
@@ -54,7 +60,8 @@ public class StudentController {
         return "/stu/comments-timeline";
     }
     @RequestMapping("files")
-    public String files(){
+    public String files(ModelMap modelMap){
+        modelMap.addAttribute("projects", projectRepository.findAll());
         return "/stu/files";
     }
     @RequestMapping("files-upload")
@@ -70,7 +77,8 @@ public class StudentController {
         return "/stu/page-new";
     }
     @RequestMapping("pages-table")
-    public String pageTable(){
+    public String pageTable(ModelMap modelMap){
+        modelMap.addAttribute("students", stuRepository.findByTeammem("1"));
         return "/stu/pages-table";
     }
     @RequestMapping("page-timeline")
@@ -104,4 +112,6 @@ public class StudentController {
         }
         return "/stu/files-upload";
     }
+
+
 }
