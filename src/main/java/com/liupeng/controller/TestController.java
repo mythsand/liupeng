@@ -52,7 +52,7 @@ public class TestController {
         studentEntity.setPasswd("12345");
         stuRepository.saveAndFlush(studentEntity);
 
-        return new ResponseEntity<>("SDFSDF", HttpStatus.OK);
+        return new ResponseEntity<String>("SDFSDF", HttpStatus.OK);
     }
 
 }

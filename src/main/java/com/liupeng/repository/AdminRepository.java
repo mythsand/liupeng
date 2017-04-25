@@ -16,6 +16,6 @@ public interface AdminRepository extends JpaRepository<AdminEntity, Integer>{
     @Transactional
     @Modifying
     //测试语句
-    @Query("update AdminEntity admin set admin.passwd=:qPasswd where admin.name=:qName")
-    void updatePasswd(@Param("qPasswd") String passwd,@Param("qName") String name);
+    @Query("update AdminEntity admin set admin.passwd=?1 where admin.name=?2")
+    int updatePasswd(String passwd, String name);
 }

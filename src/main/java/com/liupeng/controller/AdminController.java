@@ -24,6 +24,7 @@ public class AdminController {
 
     @Autowired
     ProjectRepository projectRepository;
+    @Autowired
     AdminRepository adminRepository;
 
     @RequestMapping("index")
