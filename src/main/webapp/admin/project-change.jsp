@@ -48,7 +48,7 @@
 			</aside>
 		</header>
 		<div class="content">
-			<form action="" method="post">
+			<form action="/adminProjectChange" method="post">
 				<div class="field-wrap">
 					<label class="label">项目编号</label><input type="text" value="项目编号" name="project_no"/>
 				</div>
@@ -70,7 +70,7 @@
 				</div>
 				<div class="field-wrap wysiwyg-wrap">
 					<label class="label">项目描述</label>
-					<textarea class="post" rows="5"></textarea>
+					<textarea class="post" rows="5" name="description"></textarea>
 				</div>
 				<button type="submit" class="green">Post</button> <button type="submit" class="">Preview</button>
 			</form>

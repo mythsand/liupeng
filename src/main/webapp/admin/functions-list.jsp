@@ -12,8 +12,8 @@
         <li class="section">
             <a href="pages-table"><span class="icon">&#128196;</span> 项目管理</a>
             <ul class="submenu">
-                <li><a href="page-new">项目列表</a></li>
-                <li><a href="page-timeline">项目更改</a></li>
+                <li><a href="/adminProjectList">项目列表</a></li>
+                <li><a href="/project-change-table">项目更改</a></li>
             </ul>
         </li>
         <li>

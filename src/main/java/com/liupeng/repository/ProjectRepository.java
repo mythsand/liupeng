@@ -18,11 +18,10 @@ import java.sql.Date;
 @Repository
 public interface ProjectRepository extends JpaRepository<ProjectEntity, Integer>{
     // 修改博文操作
-//    @Modifying
-//    @Transactional
-//    @Query("update ProjectEntity project set project.teamNo=:qTeamNo,project.title=:qTitle," +
-//            "project.startDate=:qStartDate,project.endDate=:qEndDate,project.description=:qDescription where project.projectNo=:qProjectNo")
-//    void updateProjectByProjectNo(@Param("qTeamNo") String teamNo, @Param("qTitle") String title, @Param("qstartDate")Date startDate,
-//    @Param("qEndDate") Date endDate,@Param("qDescription") String description,@Param("qProjectNo") String projectNo);
-//    void updateByProjectNo(String projectNo,String teamNo,String title,Date startDate,Date endDate,String description);
+    @Modifying
+    @Transactional
+    //管理员根据项目编号修改项目信息
+    @Query("update ProjectEntity  project set project.title=:title,project.teamNo=:teamNo,project.startDate=:startDate,project.endDate=:endDate," +
+            "project.description=:description where project.projectNo=:projectNo")
+    public void adminUpdateProject(@Param("projectNo")String projectNo,@Param("title") String title,@Param("teamNo")String teamNo,@Param("startDate")Date startDate,@Param("endDate")Date endDate,@Param("description")String description);
 }

@@ -7,10 +7,12 @@ import com.liupeng.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.sql.Date;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -89,6 +91,8 @@ public class AdminController {
     public String users(){
         return "/html/users";
     }
+    @RequestMapping("project-change-table")
+    public String projectChangeTable(){return "/admin/project-change";}
     @RequestMapping("adminProjectList")
     public String adminProjectList(ModelMap modelMap){
         List<ProjectEntity> projectEntities=projectRepository.findAll();
@@ -97,9 +101,14 @@ public class AdminController {
         return "/admin/project-list";
     }
     @RequestMapping("adminProjectChange")
-    public String adminProjectChange(@RequestParam String project_no,@RequestParam String title){
-        System.out.print(title);
-        return "admin/project-change";
+    public String adminProjectChange(@RequestParam String project_no, @RequestParam String title, @RequestParam String team_no, @RequestParam String start_date, @RequestParam String end_date, @RequestParam String description, ModelMap modelMap){
+        Date startDate=Date.valueOf(start_date);
+        Date endDate=Date.valueOf(end_date);
+        projectRepository.adminUpdateProject(project_no,title,team_no,startDate,endDate,description);
+        projectRepository.flush();
+        List<ProjectEntity> projectEntities=projectRepository.findAll();
+        modelMap.addAttribute("projects",projectEntities);
+        return "admin/project-list";
     }
     @RequestMapping(value = "adminChangePasswd" ,method= GET)
     public String adminChangePasswd(){
