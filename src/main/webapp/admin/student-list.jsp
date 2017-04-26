@@ -9,8 +9,8 @@
 	<meta name="keywords" content="" />
 	<meta name="robots" content="" />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" href="css/style.css" media="all" />
-	<!--[if IE]><link rel="stylesheet" href="css/ie.css" media="all" /><![endif]-->
+	<link rel="stylesheet" href="../css/style.css" media="all" />
+	<!--[if IE]><link rel="stylesheet" href="../css/ie.css" media="all" /><![endif]-->
 </head>
 <body>
 <div class="testing">
@@ -20,7 +20,7 @@
 </header>
 <section class="user">
 	<div class="profile-img">
-		<p><img src="images/uiface2.png" alt="" height="40" width="40" /> Welcome back John Doe</p>
+		<p><img src="../images/uiface2.png" alt="" height="40" width="40" /> Welcome back John Doe</p>
 	</div>
 	<div class="buttons">
 		<button class="ico-font">&#9206;</button>
@@ -175,73 +175,73 @@
 						</tr>
 					</c:forEach>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface1.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface1.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>12/03/2013</td>--%>
 						<%--</tr>--%>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface2.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface2.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>27/02/2013</td>--%>
 						<%--</tr>--%>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface3.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface3.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>03/12/2012</td>--%>
 						<%--</tr>--%>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface4.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface4.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>31/12/2012</td>--%>
 						<%--</tr>--%>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface1.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface1.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>29/11/2012</td>--%>
 						<%--</tr>--%>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface2.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface2.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>09/01/2013</td>--%>
 						<%--</tr>--%>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface3.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface3.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>06/01/2013</td>--%>
 						<%--</tr>--%>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface4.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface4.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>17/05/2012</td>--%>
 						<%--</tr>--%>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface1.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface1.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>27/07/2011</td>--%>
 						<%--</tr>--%>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface2.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface2.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>27/09/2012</td>--%>
 						<%--</tr>--%>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface3.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface3.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>17/08/2011</td>--%>
 						<%--</tr>--%>
 						<%--<tr>--%>
-							<%--<td class="avatar"><img src="images/uiface4.png" alt="" height="40" width="40" /> John Doe</td>--%>
+							<%--<td class="avatar"><img src="../images/uiface4.png" alt="" height="40" width="40" /> John Doe</td>--%>
 							<%--<td>j.doe@mtsite.com</td>--%>
 							<%--<td>********</td>--%>
 							<%--<td>31/01/2012</td>--%>
@@ -251,16 +251,16 @@
 		</div>
 	</section>
 </section>
-<script src="js/jquery-1.6.1.min.js"></script>
-<script src="js/jquery.wysiwyg.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/cycle.js"></script>
-<script src="js/jquery.checkbox.min.js"></script>
-<script src="js/flot.js"></script>
-<script src="js/flot.resize.js"></script>
-<script src="js/flot-graphs.js"></script>
-<script src="js/flot-time.js"></script>
-<script src="js/cycle.js"></script>
-<script src="js/jquery.tablesorter.min.js"></script>
+<script src="../js/jquery-1.6.1.min.js"></script>
+<script src="../js/jquery.wysiwyg.js"></script>
+<script src="../js/custom.js"></script>
+<script src="../js/cycle.js"></script>
+<script src="../js/jquery.checkbox.min.js"></script>
+<script src="../js/flot.js"></script>
+<script src="../js/flot.resize.js"></script>
+<script src="../js/flot-graphs.js"></script>
+<script src="../js/flot-time.js"></script>
+<script src="../js/cycle.js"></script>
+<script src="../js/jquery.tablesorter.min.js"></script>
 </body>
 </html>

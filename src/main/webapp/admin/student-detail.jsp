@@ -8,8 +8,8 @@
 	<meta name="keywords" content="" />
 	<meta name="robots" content="" />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" href="css/style.css" media="all" />
-	<!--[if IE]><link rel="stylesheet" href="css/ie.css" media="all" /><![endif]-->
+	<link rel="stylesheet" href="../css/style.css" media="all" />
+	<!--[if IE]><link rel="stylesheet" href="../css/ie.css" media="all" /><![endif]-->
 </head>
 <body>
 <div class="testing">
@@ -19,7 +19,7 @@
 </header>
 <section class="user">
 	<div class="profile-img">
-		<p><img src="images/uiface2.png" alt="" height="40" width="40" /> Welcome back John Doe</p>
+		<p><img src="../images/uiface2.png" alt="" height="40" width="40" /> Welcome back John Doe</p>
 	</div>
 	<div class="buttons">
 		<button class="ico-font">&#9206;</button>
@@ -272,16 +272,16 @@
 		</section>
 	</div>
 </section>
-<script src="js/jquery-1.6.1.min.js"></script>
-<script src="js/jquery.wysiwyg.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/cycle.js"></script>
-<script src="js/jquery.checkbox.min.js"></script>
-<!--<script src="js/flot.js"></script>
-<script src="js/flot.resize.js"></script>
-<script src="js/flot-graphs.js"></script>
-<script src="js/flot-time.js"></script>
-<script src="js/cycle.js"></script>-->
-<script src="js/jquery.tablesorter.min.js"></script>
+<script src="../js/jquery-1.6.1.min.js"></script>
+<script src="../js/jquery.wysiwyg.js"></script>
+<script src="../js/custom.js"></script>
+<script src="../js/cycle.js"></script>
+<script src="../js/jquery.checkbox.min.js"></script>
+<!--<script src="../js/flot.js"></script>
+<script src="../js/flot.resize.js"></script>
+<script src="../js/flot-graphs.js"></script>
+<script src="../js/flot-time.js"></script>
+<script src="../js/cycle.js"></script>-->
+<script src="../js/jquery.tablesorter.min.js"></script>
 </body>
 </html>
