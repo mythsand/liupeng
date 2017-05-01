@@ -22,6 +22,12 @@
 </div>
 <%--功能菜单--%>
 <%@include file="functions-list.jsp"%>
+<section class="alert">
+	<div class="green">	
+		<p>Hi Lee, you have <a href="#">3 new pages</a> and <a href="#">16 comments</a> to approve, better get going!</p>
+		<span class="close">&#10006;</span>
+	</div>
+</section>
 <section class="content">
 	<section class="widget" style="min-height:300px">
 		<header>
@@ -42,31 +48,27 @@
 			</aside>
 		</header>
 		<div class="content">
-			<form action="/admin-project-change" method="post">
+			<form action="/admin-student-change" method="post">
 				<div class="field-wrap">
-					<label class="label">项目编号</label><input type="text" value="项目编号" name="project_no"/>
-				</div>
-				<div class="field-wrap">
-					<label class="label">项目名称</label>
-					<input type="text" value="项目名称" name="title">
+					<label class="label">学号</label><input type="text" name="stu_no" value="${stu_no}"/>
 				</div>
 				<div class="field-wrap">
-					<label class="label">团队编号</label>
-					<input type="text" value="团队编号" name="team_no"/>
+					<label class="label">姓名</label>
+					<input type="text" name="name">
 				</div>
 				<div class="field-wrap">
-					<label class="label">起始日期</label>
-					<input type="date" value="" name="start_date"/>
+					<label class="label">密码</label>
+					<input type="password" name="passwd"/>
 				</div>
 				<div class="field-wrap">
-					<label class="label">终止日期</label>
-					<input type="date" value="" name="end_date"/>
+					<label class="label">学院</label>
+					<input type="text" name="college"/>
 				</div>
-				<div class="field-wrap wysiwyg-wrap">
-					<label class="label">项目描述</label>
-					<textarea class="post" rows="5" name="description"></textarea>
+				<div class="field-wrap">
+					<label class="label">团队号</label>
+					<input type="text" name="team_id"/>
 				</div>
-				<button type="submit" class="green">Post</button> <button type="submit" class="">Preview</button>
+				<button type="submit" class="green">提交</button> <button type="reset" class="">取消</button>
 			</form>
 		</div>
 	</section>

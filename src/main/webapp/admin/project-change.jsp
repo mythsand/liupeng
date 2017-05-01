@@ -22,12 +22,6 @@
 </div>
 <%--功能菜单--%>
 <%@include file="functions-list.jsp"%>
-<section class="alert">
-	<div class="green">	
-		<p>Hi Lee, you have <a href="#">3 new pages</a> and <a href="#">16 comments</a> to approve, better get going!</p>
-		<span class="close">&#10006;</span>
-	</div>
-</section>
 <section class="content">
 	<section class="widget" style="min-height:300px">
 		<header>
@@ -48,7 +42,7 @@
 			</aside>
 		</header>
 		<div class="content">
-			<form action="/adminProjectChange" method="post">
+			<form action="/admin-project-change" method="post">
 				<div class="field-wrap">
 					<label class="label">项目编号</label><input type="text" value="项目编号" name="project_no"/>
 				</div>
@@ -76,82 +70,6 @@
 			</form>
 		</div>
 	</section>
-	<div class="widget-container">
-		<section class="widget small">
-			<header>
-				<span class="icon">&#59168;</span>
-				<hgroup>
-					<h1>Latest comments</h1>
-					<h2>What they're saying</h2>
-				</hgroup>
-				<aside>
-					<span>
-						<a href="#">&#9881;</a>
-						<ul class="settings-dd">
-							<li><label>Option a</label><input type="checkbox" /></li>
-							<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-							<li><label>Option c</label><input type="checkbox" /></li>
-						</ul>
-					</span>
-				</aside>
-			</header>
-			<div class="content no-padding timeline">
-				<div class="tl-post comments">
-					<span class="icon">&#59168;</span>
-					<p>
-						<a href="#">John Doe says:</a> Lorem ipsum dolor sit amet, consecteteur adipiscing elit sed diam nonummy.
-						<span class="reply"><input type="text" value="Respond to comment..."/></span>
-					</p>
-				</div>
-				<div class="tl-post comments">
-					<span class="icon">&#59168;</span>
-					<p>
-						<a href="#">John Doe says:</a> Lorem ipsum dolor sit amet, consecteteur adipiscing elit sed diam nonummy.
-						<span class="reply"><input type="text" value="Respond to comment..."/></span>
-					</p>
-				</div>
-				<span class="show-more"><a	 href="#">More</a></span>
-			</div>
-		</section>
-		
-		<section class="widget small">
-			<header> 
-				<span class="icon">&#128196;</span>
-				<hgroup>
-					<h1>Other pages</h1>
-					<h2>More pages</h2>
-				</hgroup>
-				<aside>
-					<span>
-						<a href="#">&#9881;</a>
-						<ul class="settings-dd">
-							<li><label>Option a</label><input type="checkbox" /></li>
-							<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-							<li><label>Option c</label><input type="checkbox" /></li>
-						</ul>
-					</span>
-				</aside>
-			</header>
-			<div class="content no-padding timeline">
-				<div class="tl-post">
-					<span class="icon">&#59185;</span>
-					<p><a href="#">eCommerce design</a> service page.</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#59185;</span>
-					<p><a href="#">Search engine optimisation</a> service page..</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#59185;</span>
-					<p><a href="#">Website design</a> service page.</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#59185;</span>
-					<p><a href="#">Graphic design</a> service page.</p>
-				</div>
-			</div>
-		</section>
-	</div>
 </section>
 <script src="js/jquery-1.6.1.min.js"></script>
 <script src="js/jquery.wysiwyg.js"></script>

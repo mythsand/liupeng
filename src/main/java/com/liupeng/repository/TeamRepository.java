@@ -14,4 +14,6 @@ public interface TeamRepository extends JpaRepository<TeamEntity, Integer> {
 
     List<?> findById(int id);
 
+    List<TeamEntity> findByTeaNo(String tea_no);
+
 }

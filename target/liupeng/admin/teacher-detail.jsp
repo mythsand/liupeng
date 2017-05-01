@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <%@page pageEncoding="utf-8" language="java" %>
 <html lang="">
@@ -47,43 +48,32 @@
 			</aside>
 		</header>
 		<div class="content">
-			<%--<div class="field-wrap">--%>
-				<%--<input type="text" value="Title"/>--%>
-			<%--</div>--%>
-			<%--<div class="field-wrap">--%>
-				<%--<input type="text" value="Author"/>--%>
-			<%--</div>--%>
-			<%--<div class="field-wrap">--%>
-				<%--<input type="text" value="Tags"/>--%>
-			<%--</div>--%>
-			<%--<div class="field-wrap wysiwyg-wrap">--%>
-				<%--<textarea class="post" rows="5"></textarea>--%>
-			<%--</div>--%>
-			<%--<button type="submit" class="green">Post</button> <button type="submit" class="">Preview</button>--%>
 			<table id="myTable" border="0" width="100">
 				<thead>
-				<h2 align="center">学生详细信息</h2>
+				<h2 align="center">教师详细信息</h2>
 				</thead>
 				<tbody>
 				<tr align="center">
-					<td>学生姓名：</td>
-					<td>${studentEntity.name}</td>
+					<td>姓名：</td>
+					<td>${teacherEntity.name}</td>
 				</tr>
 				<tr align="center">
-					<td>学号：</td>
-					<td>${studentEntity.stuNo}</td>
+					<td>工号：</td>
+					<td>${teacherEntity.teaNo}</td>
 				</tr>
 				<tr align="center">
 					<td>所在学院：</td>
-					<td>${studentEntity.college}</td>
+					<td>${teacherEntity.college}</td>
 				</tr>
 				<tr align="center">
-					<td>学生姓名：</td>
-					<td>${studentEntity.name}</td>
-				</tr>
-				<tr align="center">
-					<td>团队编号：</td>
-					<td>${studentEntity.memberByTeamId}</td>
+					<td>指导团队：</td>
+					<td>
+						<ul>
+							<c:forEach items="${teamEntityList}" var="team">
+								<li>${team.teamNo}</li>
+							</c:forEach>
+						</ul>
+					</td>
 				</tr>
 				</tbody>
 			</table>

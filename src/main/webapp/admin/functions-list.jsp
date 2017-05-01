@@ -12,7 +12,7 @@
         <li class="section">
             <a href="pages-table"><span class="icon">&#128196;</span> 项目管理</a>
             <ul class="submenu">
-                <li><a href="/adminProjectList">项目列表</a></li>
+                <li><a href="/admin-project-list">项目列表</a></li>
                 <li><a href="/project-change-table">项目更改</a></li>
             </ul>
         </li>
@@ -37,8 +37,8 @@
         <li>
             <a href="users"><span class="icon">&#128101;</span> 用户管理 </a>
             <ul class="submenu">
-                <li><a href="#">学生管理</a> </li>
-                <li><a href="#">教师管理</a> </li>
+                <li><a href="/admin-student-list">学生管理</a> </li>
+                <li><a href="/admin-teacher-list">教师管理</a> </li>
                 <li><a href="#">团队管理</a> </li>
                 <li><a href="#">管理员管理</a> </li>
             </ul>

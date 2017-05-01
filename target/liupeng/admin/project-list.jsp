@@ -70,69 +70,6 @@
                         <td>${project.endDate}</td>
                     </tr>
                 </c:forEach>
-                <%--<tr>--%>
-                    <%--<td><input type="checkbox" /> Home</td>--%>
-                    <%--<td>01/3/2013</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>John Doe</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td><input type="checkbox" /> Services</td>--%>
-                    <%--<td>01/3/2013</td>--%>
-                    <%--<td>4</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>John Doe</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td><input type="checkbox" /> Portfolio</td>--%>
-                    <%--<td>02/3/2013</td>--%>
-                    <%--<td>12</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>John Doe</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td><input type="checkbox" /> About us</td>--%>
-                    <%--<td>02/3/2013</td>--%>
-                    <%--<td>2</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>John Doe</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td><input type="checkbox" /> Blog</td>--%>
-                    <%--<td>02/3/2013</td>--%>
-                    <%--<td>32</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>John Doe</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td><input type="checkbox" /> Contact us</td>--%>
-                    <%--<td>03/3/2013</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>John Doe</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td><input type="checkbox" /> Our clients</td>--%>
-                    <%--<td>04/3/2013</td>--%>
-                    <%--<td>1</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>John Doe</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td><input type="checkbox" /> Partnerships</td>--%>
-                    <%--<td>04/3/2013</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>John Doe</td>--%>
-                <%--</tr>--%>
-                <%--<tr>--%>
-                    <%--<td><input type="checkbox" />Jobs</td>--%>
-                    <%--<td>04/3/2013</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>0</td>--%>
-                    <%--<td>John Doe</td>--%>
-                <%--</tr>--%>
                 </tbody>
             </table>
         </div>
