@@ -3,9 +3,7 @@ package com.liupeng.controller;
 import com.liupeng.model.*;
 import com.liupeng.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,6 +32,8 @@ public class AdminController {
     TeaRepository teaRepository;
     @Autowired
     TeamRepository teamRepository;
+    @Autowired
+    PostRepository postRepository;
 
 
     @RequestMapping("index")
@@ -241,4 +241,16 @@ public class AdminController {
         return "project-list";
     }
 
+    @RequestMapping(value = "blog-news", method = GET)
+    public String blogNew(@RequestParam("title")String title, @RequestParam("author")String author, @RequestParam("content")String content){
+        PostEntity postEntity = new PostEntity();
+        postEntity.setAuthor(author);
+        postEntity.setTitle(title);
+        postEntity.setContent(content);
+        long current = System.currentTimeMillis();
+        Date date = new Date(current);
+        postEntity.setTime(date);
+        postRepository.saveAndFlush(postEntity);
+        return "blog-new";
+    }
 }

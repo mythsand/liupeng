@@ -24,7 +24,7 @@
 
 <section class="alert">
 	<div class="green">	
-		<p>Hi Lee, you have <a href="#">3 new pages</a> and <a href="#">16 comments</a> to approve, better get going!</p>
+		<p>此处查看教师详细信息，如需修改，请返回上一层 <a href="/admin/admin-teacher-list">列表</a> </p>
 		<span class="close">&#10006;</span>
 	</div>
 </section>
@@ -33,26 +33,20 @@
 		<header>
 			<span class="icon">&#59160;</span>
 			<hgroup>
-				<h1>Blog</h1>
-				<h2>Create new blog page</h2>
+				<h1>教师个人详细信息</h1>
 			</hgroup>
-			<aside>
-				<span>
-					<a href="#">&#9881;</a>
-					<ul class="settings-dd">
-						<li><label>Option a</label><input type="checkbox" /></li>
-						<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-						<li><label>Option c</label><input type="checkbox" /></li>
-					</ul>
-				</span>
-			</aside>
 		</header>
 		<div class="content">
 			<table id="myTable" border="0" width="100">
 				<thead>
-				<h2 align="center">教师详细信息</h2>
+				<h2 align="center">${teacherEntity.name}的详细信息</h2>
 				</thead>
 				<tbody>
+				<tr align="center">
+					<td colspan="2">
+						<img src="../images/uiface2.png">
+					</td>
+				</tr>
 				<tr align="center">
 					<td>姓名：</td>
 					<td>${teacherEntity.name}</td>
@@ -84,32 +78,21 @@
 			<header>
 				<span class="icon">&#59168;</span>
 				<hgroup>
-					<h1>Latest comments</h1>
-					<h2>What they're saying</h2>
+					<h1>学生留言</h1>
 				</hgroup>
-				<aside>
-					<span>
-						<a href="#">&#9881;</a>
-						<ul class="settings-dd">
-							<li><label>Option a</label><input type="checkbox" /></li>
-							<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-							<li><label>Option c</label><input type="checkbox" /></li>
-						</ul>
-					</span>
-				</aside>
 			</header>
 			<div class="content no-padding timeline">
 				<div class="tl-post comments">
 					<span class="icon">&#59168;</span>
 					<p>
-						<a href="#">John Doe says:</a> Lorem ipsum dolor sit amet, consecteteur adipiscing elit sed diam nonummy.
+						<a href="#">123说:</a> 请问什么时候开始中期检查？
 						<span class="reply"><input type="text" value="Respond to comment..."/></span>
 					</p>
 				</div>
 				<div class="tl-post comments">
 					<span class="icon">&#59168;</span>
 					<p>
-						<a href="#">John Doe says:</a> Lorem ipsum dolor sit amet, consecteteur adipiscing elit sed diam nonummy.
+						<a href="#">meme说:</a> 如何实现浏览器的跨域访问？
 						<span class="reply"><input type="text" value="Respond to comment..."/></span>
 					</p>
 				</div>
@@ -121,36 +104,21 @@
 			<header> 
 				<span class="icon">&#128196;</span>
 				<hgroup>
-					<h1>Other pages</h1>
-					<h2>More pages</h2>
+					<h1>指导经历</h1>
 				</hgroup>
-				<aside>
-					<span>
-						<a href="#">&#9881;</a>
-						<ul class="settings-dd">
-							<li><label>Option a</label><input type="checkbox" /></li>
-							<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-							<li><label>Option c</label><input type="checkbox" /></li>
-						</ul>
-					</span>
-				</aside>
 			</header>
 			<div class="content no-padding timeline">
 				<div class="tl-post">
 					<span class="icon">&#59185;</span>
-					<p><a href="#">eCommerce design</a> service page.</p>
+					<p>2016年指导完成国家级大创</p>
 				</div>
 				<div class="tl-post">
 					<span class="icon">&#59185;</span>
-					<p><a href="#">Search engine optimisation</a> service page..</p>
+					<p>2015年指导完成省级大创</p>
 				</div>
 				<div class="tl-post">
 					<span class="icon">&#59185;</span>
-					<p><a href="#">Website design</a> service page.</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#59185;</span>
-					<p><a href="#">Graphic design</a> service page.</p>
+					<p>2014年指导完成校级大创</p>
 				</div>
 			</div>
 		</section>

@@ -61,6 +61,10 @@
 					<input type="password" name="passwd"/>
 				</div>
 				<div class="field-wrap">
+					<label class="label">确认密码</label>
+					<input type="password" name="repasswd"/>
+				</div>
+				<div class="field-wrap">
 					<label class="label">学院</label>
 					<input type="text" name="college"/>
 				</div>
