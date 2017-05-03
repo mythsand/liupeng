@@ -2,6 +2,7 @@ package com.liupeng.controller;
 
 import com.liupeng.model.*;
 import com.liupeng.repository.*;
+import com.sun.javafx.sg.prism.NGShape;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
 import java.util.List;
@@ -153,6 +155,7 @@ public class AdminController {
     //删除对应学生
     @RequestMapping(value = "admin-student-delete",method=GET)
     public String studentDelete(@RequestParam String stu_no,ModelMap modelMap){
+//        System.out.println("OKOKOKOK");
         stuRepository.deleteByStuNo(stu_no);
         List<StudentEntity> studentEntityList=stuRepository.findAll();
         modelMap.addAttribute("students",studentEntityList);
@@ -240,5 +243,77 @@ public class AdminController {
         adminRepository.updatePasswd("asdf","admin");
         return "project-list";
     }
+
+    //管理员管理模块
+    @RequestMapping("admin-admin-list")
+    public String adminAdminList(ModelMap modelMap){
+        List<AdminEntity>adminEntityList=adminRepository.findAll();
+        modelMap.addAttribute("admins",adminEntityList);
+        return "admin-list";
+    }
+    //跳转到管理员修改页面
+    @RequestMapping(value = "admin-change-table",method = GET)
+    public String adminChange(@RequestParam String type,@RequestParam String name, ModelMap modelMap){
+        if(type.equals("1")){
+            //具有操作权限
+            modelMap.addAttribute("name",name);
+            return "admin-change";
+        }else{
+            //不具有操作权限
+            modelMap.addAttribute("msg","对不起，您不具有操作权限！");
+            return "admin-list";
+        }
+    }
+
+    //管理员修改
+    @RequestMapping("admin-admin-change")
+    public String adminChangeAction(@RequestParam String name,@RequestParam String passwd,@RequestParam String type,@RequestParam String department,ModelMap modelMap){
+        int n=adminRepository.updateAdminByName(name,passwd,type,department);
+        if(n>0){
+            List<AdminEntity>admins=adminRepository.findAll();
+            modelMap.addAttribute("admins",admins);
+            return "admin-admin-list";
+        }
+        else{
+            return "error";
+        }
+    }
+
+    //管理员删除
+    @RequestMapping("admin-admin-delete")
+    public String adminDelete(@RequestParam String name,@RequestParam String type, ModelMap modelMap){
+        if(!type.equals("1")){
+            return "error";
+        }
+        int n=adminRepository.deleteByName(name);
+        if(n>0){
+            List<AdminEntity>admins=adminRepository.findAll();
+            modelMap.addAttribute("admins",admins);
+            return "admin-list";
+        }
+        else{
+            return "error";
+        }
+    }
+    //跳转到添加管理员列表
+    @RequestMapping("admin-add-table")
+    public String adminAdd(){
+        return "admin-add";
+    }
+    //添加管理员
+    @RequestMapping("admin-admin-add")
+    public String adminAddAction(@RequestParam String name,@RequestParam String passwd,@RequestParam String type,@RequestParam String department,ModelMap modelMap){
+        AdminEntity adminEntity=new AdminEntity();
+        adminEntity.setName(name);
+        adminEntity.setPasswd(passwd);
+        adminEntity.setType(type);
+        adminEntity.setDepartment(department);
+        adminRepository.save(adminEntity);
+        adminRepository.flush();
+        List<AdminEntity> admins=adminRepository.findAll();
+        modelMap.addAttribute("admins", admins);
+        return "admin-list";
+    }
+
 
 }
