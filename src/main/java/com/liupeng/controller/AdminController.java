@@ -316,4 +316,17 @@ public class AdminController {
     }
 
 
+    //项目统计模块
+    @RequestMapping("admin-admin-statics")
+    public String adminStatics(ModelMap modelMap){
+        long stuNum=stuRepository.count();
+        long teaNum=teaRepository.count();
+        long teamNum=teamRepository.count();
+        long proNum=projectRepository.count();
+        modelMap.addAttribute("stuNum",stuNum);
+        modelMap.addAttribute("teaNum",teaNum);
+        modelMap.addAttribute("teamNum",teamNum);
+        modelMap.addAttribute("proNum",proNum);
+        return "admin-statics";
+    }
 }
