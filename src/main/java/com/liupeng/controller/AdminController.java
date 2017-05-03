@@ -50,7 +50,7 @@ public class AdminController {
     public String dashboard(){
         return "/admin/dashboard";
     }
-    @RequestMapping("blog-new")
+    @RequestMapping("admin-blog-new")
     public String blogBlog(){
         return "/admin/blog-new";
     }
@@ -244,8 +244,9 @@ public class AdminController {
         return "project-list";
     }
 
-    @RequestMapping(value = "blog-news", method = GET)
-    public String blogNew(@RequestParam("title")String title, @RequestParam("author")String author, @RequestParam("content")String content){
+
+    @RequestMapping(value = "admin-blog-news", method = GET)
+    public String blogNew(@RequestParam("title")String title, @RequestParam("author")String author, @RequestParam("content")String content,ModelMap modelMap){
         PostEntity postEntity = new PostEntity();
         postEntity.setAuthor(author);
         postEntity.setTitle(title);
@@ -254,9 +255,29 @@ public class AdminController {
         Date date = new Date(current);
         postEntity.setTime(date);
         postRepository.saveAndFlush(postEntity);
-        return "blog-new";
+        List<PostEntity>postEntityList=postRepository.findAll();
+        modelMap.addAttribute("posts",postEntityList);
+        return "blog-table";
     }
 
+    @RequestMapping(value = "admin-blog-list")
+    public String blogList(ModelMap modelMap){
+        List<PostEntity>postEntityList=postRepository.findAll();
+        modelMap.addAttribute("posts",postEntityList);
+        return "blog-table";
+    }
+    @RequestMapping(value = "admin-blog-delete")
+    public String blogDelete(@RequestParam String n, ModelMap modelMap){
+        int num=postRepository.deletePost(n);
+        if(num>0){
+            List<PostEntity>postEntityList=postRepository.findAll();
+            modelMap.addAttribute("posts",postEntityList);
+            return "blog-table";
+        }
+        else{
+            return "error";
+        }
+    }
     //管理员管理模块
     @RequestMapping("admin-admin-list")
     public String adminAdminList(ModelMap modelMap){
