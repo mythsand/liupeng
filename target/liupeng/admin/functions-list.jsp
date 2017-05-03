@@ -32,7 +32,7 @@
             </ul>
         </li>
         <li>
-            <a href="statistics"><span class="icon">&#128202;</span> 项目统计</a>
+            <a href="/admin/admin-admin-statics"><span class="icon">&#128202;</span> 项目统计</a>
         </li>
         <li>
             <a href="#"><span class="icon">&#128101;</span> 用户管理 </a>
