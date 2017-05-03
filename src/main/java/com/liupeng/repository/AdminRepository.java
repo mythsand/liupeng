@@ -18,4 +18,14 @@ public interface AdminRepository extends JpaRepository<AdminEntity, Integer>{
     //测试语句
     @Query("update AdminEntity admin set admin.passwd=?1 where admin.name=?2")
     int updatePasswd(String passwd, String name);
+
+    @Transactional
+    @Modifying
+    @Query("update AdminEntity admin set admin.passwd=?2,admin.type=?3,admin.department=?4 where admin.name=?1")
+    int updateAdminByName(String name,String passwd,String type,String department);
+
+    @Transactional
+    @Modifying
+    @Query("delete from AdminEntity admin where admin.name=?1")
+    int deleteByName(String name);
 }

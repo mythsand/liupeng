@@ -47,8 +47,8 @@
 							<td>${student.stuNo}</td>
 							<td>${student.college}</td>
 							<td>
-								<a href="/student-change-table?stu_no=${student.stuNo}&name=${student.name}">修改</a>&nbsp;&nbsp;
-								<a href="/admin-student-delete?stu_no=${student.stuNo}" ><font color="gray">删除</font></a>
+								<a href="/admin/student-change-table?stu_no=${student.stuNo}&name=${student.name}">修改</a>&nbsp;&nbsp;
+								<a href="/admin/admin-student-delete?stu_no=${student.stuNo}" ><font color="gray">删除</font></a>
 							</td>
 						</tr>
 					</c:forEach>

@@ -15,45 +15,56 @@
 <body>
 <div class="testing">
 <header class="main">
-	<h1>大创管理系统</h1>
+	<h1><strong>Retina</strong> Dashboard</h1>
 	<input type="text" value="search" />
 </header>
 <%@include file="navbar.jsp"%>
 </div>
 <%@include file="functions-list.jsp"%>
+<c:if test="${msg}!=null">
+	<section class="alert">
+		<div class="green">
+			<p>${msg}</p>
+		</div>
+	</section>
+</c:if>
 
 <section class="content">
 	<section class="widget">
 		<header>
 			<span class="icon">&#128100;</span>
 			<hgroup>
-				<h1>学生列表</h1>
+				<h1>Users</h1>
+				<h2>Current member accounts</h2>
 			</hgroup>
 		</header>
 		<div class="content">
 			<table id="myTable" border="0" width="100">
 				<thead>
 					<tr>
-						<th class="avatar">学生姓名</th>
-						<th>学号</th>
-						<th>学院</th>
+						<th>姓名</th>
+						<th>密码</th>
+						<th>类别</th>
+						<th>部门</th>
 						<th>操作</th>
 					</tr>
 				</thead>
 					<tbody>
-					<c:forEach items="${students}" var="student">
+					<c:forEach items="${admins}" var="admin">
 						<tr>
-							<td class="avatar"><img src="../images/uiface1.png" alt="" height="40" width="40" /><a href="admin-student-detail?name=${student.name}">${student.name}</a> </td>
-							<td>${student.stuNo}</td>
-							<td>${student.college}</td>
+							<td class="avatar"><img src="../images/uiface3.png" alt="" height="40" width="40" />${admin.name}</td>
+							<td>${admin.passwd}</td>
+							<td>${admin.type}</td>
+							<td>${admin.department}</td>
 							<td>
-								<a href="/admin/student-change-table?stu_no=${student.stuNo}&name=${student.name}">修改</a>&nbsp;&nbsp;
-								<a href="/admin/admin-student-delete?stu_no=${student.stuNo}" ><font color="gray">删除</font></a>
+								<a href="/admin/admin-change-table?name=${admin.name}&type=1">修改</a>
+								<a href="/admin/admin-admin-delete?name=${admin.name}&type=1">删除</a>
 							</td>
 						</tr>
 					</c:forEach>
 					</tbody>
 				</table>
+			<button class="button"><a href="/admin/admin-add-table">添加新用户</a> </button>
 		</div>
 	</section>
 </section>
