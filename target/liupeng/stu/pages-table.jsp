@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html lang="">
@@ -117,7 +118,7 @@
 		<%--</ul>--%>
 		<%--</li>--%>
 		<%--<li><a href="statistics"><span class="icon">&#128202;</span> Statistics</a></li>--%>
-		<li class="section"><a href="pages-table"><span class="icon">&#128101;</span> 信息查询 <span class="pip"></span></a></li>
+		<li class="section"><a href="pages-table"><span class="icon">&#128101;</span> 成员信息 <span class="pip"></span></a></li>
 		<%--<li>--%>
 		<%--<a href="ui-elements"><span class="icon">&#9881;</span> UI Elements</a>--%>
 		<%--<ul class="submenu">--%>
@@ -137,8 +138,8 @@
 		<header>
 			<span class="icon">&#128196;</span>
 			<hgroup>
-				<h1>Pages</h1>
-				<h2>CMS content pages</h2>
+				<h1>信息查看</h1>
+				<h2>详细信息查看</h2>
 			</hgroup>
 			<aside>
 				<span>
@@ -155,77 +156,23 @@
 			<table id="myTable" border="0" width="100">
 				<thead>
 					<tr>
-						<th>Page title</th>
-						<th >Date</th>
-						<th>Child pages</th>
-						<th>Comments</th>
-						<th>Author</th>
+						<th>ID</th>
+						<th>学号</th>
+						<th>姓名</th>
+						<th>学院</th>
+						<th>备注</th>
 					</tr>
 				</thead>
 					<tbody>
-						<tr>
-							<td><input type="checkbox" /> Home</td>
-							<td>01/3/2013</td>
-							<td>0</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Services</td>
-							<td>01/3/2013</td>
-							<td>4</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Portfolio</td>
-							<td>02/3/2013</td>
-							<td>12</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> About us</td>
-							<td>02/3/2013</td>
-							<td>2</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Blog</td>
-							<td>02/3/2013</td>
-							<td>32</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Contact us</td>
-							<td>03/3/2013</td>
-							<td>0</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Our clients</td>
-							<td>04/3/2013</td>
-							<td>1</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" /> Partnerships</td>
-							<td>04/3/2013</td>
-							<td>0</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" />Jobs</td>
-							<td>04/3/2013</td>
-							<td>0</td>
-							<td>0</td>
-							<td>John Doe</td>
-						</tr>
+						<c:forEach items="${students}" var="student">
+							<tr>
+								<td><input type="checkbox" /> ${student.id}</td>
+								<td>${student.stuNo}</td>
+								<td>${student.name}</td>
+								<td>${student.college}</td>
+								<td></td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 		</div>

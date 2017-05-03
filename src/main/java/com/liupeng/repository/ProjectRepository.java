@@ -23,5 +23,6 @@ public interface ProjectRepository extends JpaRepository<ProjectEntity, Integer>
     //管理员根据项目编号修改项目信息
     @Query("update ProjectEntity  project set project.title=:title,project.teamNo=:teamNo,project.startDate=:startDate,project.endDate=:endDate," +
             "project.description=:description where project.projectNo=:projectNo")
-    public void adminUpdateProject(@Param("projectNo")String projectNo,@Param("title") String title,@Param("teamNo")String teamNo,@Param("startDate")Date startDate,@Param("endDate")Date endDate,@Param("description")String description);
+    void adminUpdateProject(@Param("projectNo") String projectNo, @Param("title") String title, @Param("teamNo") String teamNo, @Param("startDate") Date startDate, @Param("endDate") Date endDate, @Param("description") String description);
+
 }

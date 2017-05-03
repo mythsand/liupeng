@@ -18,9 +18,10 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
- * Created by mythsand on 12/html/04/html/2017.
+ * Created by mythsand on 12/admin/04/admin/2017.
  */
 @Controller
+@RequestMapping("admin")
 public class AdminController {
 
     @Autowired
@@ -37,65 +38,65 @@ public class AdminController {
 
     @RequestMapping("index")
     public String index(){
-        return "/html/index";
+        return "/admin/index";
     }
     @RequestMapping("")
     public String index1(){
-        return "/html/index";
+        return "/admin/project-list";
     }
     @RequestMapping("dashboard")
     public String dashboard(){
-        return "/html/dashboard";
+        return "/admin/dashboard";
     }
     @RequestMapping("blog-new")
     public String blogBlog(){
-        return "/html/blog-new";
+        return "/admin/blog-new";
     }
     @RequestMapping("blog-table")
     public String blogTable(){
-        return "/html/blog-table";
+        return "/admin/blog-table";
     }
     @RequestMapping("blog-timeline")
     public String blogTimeline(){
-        return "/html/blog-timeline";
+        return "/admin/blog-timeline";
     }
     @RequestMapping("comments-timeline")
     public String commentsTimeLine(){
-        return "/html/comments-timeline";
+        return "/admin/comments-timeline";
     }
     @RequestMapping("files")
     public String files(){
-        return "/html/files";
+        return "/admin/files";
     }
     @RequestMapping("files-upload")
     public String filesUp(){
-        return "/html/files-upload";
+        return "/admin/files-upload";
     }
     @RequestMapping("icon-fonts")
     public String iconFonts(){
-        return "/html/icon-fonts";
+        return "/admin/icon-fonts";
     }
     @RequestMapping("page-new")
     public String pageNew(){
-        return "/html/page-new";
+        return "/admin/page-new";
     }
     @RequestMapping("pages-table")
     public String pageTable(){
-        return "/html/pages-table";
+        return "/admin/pages-table";
     }
     @RequestMapping("page-timeline")
-    public String pageTimeLine(){return "/html/page-timeline";}
+    public String pageTimeLine(){return "/admin/page-timeline";}
     @RequestMapping("statistics")
     public String statistics(){
-        return "/html/statistics";
+        return "/admin/statistics";
     }
     @RequestMapping("ui-elements")
     public String uiElements(){
-        return "/html/ui-elements";
+        return "/admin/ui-elements";
     }
     @RequestMapping("users")
     public String users(){
-        return "/html/users";
+        return "/admin/users";
     }
     @RequestMapping("project-change-table")
     public String projectChangeTable(){return "/admin/project-change";}
@@ -108,18 +109,36 @@ public class AdminController {
 
     //跳转到学生信息修改表
     @RequestMapping(value = "student-change-table",method = GET)
-    public String studentChange(@RequestParam String stu_no,@RequestParam String name, ModelMap modelMap){
-        modelMap.addAttribute("stu_no",stu_no);
-        modelMap.addAttribute("name",name);
-        return "/admin/student-change";
+    public String studentChange(@RequestParam String stu_no,@RequestParam String name, ModelMap modelMap) {
+        modelMap.addAttribute("stu_no", stu_no);
+        modelMap.addAttribute("name", name);
+        return "student-change";
     }
+//    @RequestMapping("admin-project-list")
+//    public String adminProjectList(ModelMap modelMap){
+//        List<ProjectEntity> projectEntities=projectRepository.findAll();
+//        System.out.println(projectEntities.size());
+//        modelMap.addAttribute("projects",projectEntities);
+//        return "/admin/project-list";
+//    }
+//    @RequestMapping("ProjectChange")
+//    public String adminProjectChange(@RequestParam String project_no, @RequestParam String title, @RequestParam String team_no, @RequestParam String start_date, @RequestParam String end_date, @RequestParam String description, ModelMap modelMap){
+//        Date startDate=Date.valueOf(start_date);
+//        Date endDate=Date.valueOf(end_date);
+//        projectRepository.adminUpdateProject(project_no,title,team_no,startDate,endDate,description);
+//        projectRepository.flush();
+//        List<ProjectEntity> projectEntities=projectRepository.findAll();
+//        modelMap.addAttribute("projects",projectEntities);
+//        return "admin/project-list";
+//>>>>>>> ee459c66b6885c127fb542c2712e442a77f341ad
+//    }
 
     //查看学生列表
     @RequestMapping(value = "admin-student-list",method = GET)
     public String studentList(ModelMap modelMap){
         List<StudentEntity> studentEntityList=stuRepository.findAll();
         modelMap.addAttribute("students",studentEntityList);
-        return "admin/student-list";
+        return "student-list";
     }
 
 
@@ -128,15 +147,16 @@ public class AdminController {
     public String studentDetail(@RequestParam String name,ModelMap modelMap){
         StudentEntity student=stuRepository.findByName(name);
         modelMap.addAttribute(student);
-        return "admin/student-detail";
+        return "student-detail";
     }
+
     //删除对应学生
     @RequestMapping(value = "admin-student-delete",method=GET)
     public String studentDelete(@RequestParam String stu_no,ModelMap modelMap){
         stuRepository.deleteByStuNo(stu_no);
         List<StudentEntity> studentEntityList=stuRepository.findAll();
         modelMap.addAttribute("students",studentEntityList);
-        return "admin/student-list";
+        return "student-list";
     }
     //更改学生信息
     @RequestMapping(value = "admin-student-change",method = POST)
@@ -146,10 +166,10 @@ public class AdminController {
         if(n>0){
             StudentEntity student=stuRepository.findByStuNo(stu_no);
             modelMap.addAttribute(student);
-            return "admin/student-detail";
+            return "student-detail";
         }
         else{
-            return "admin/error";
+            return "error";
         }
     }
 
@@ -159,7 +179,7 @@ public class AdminController {
     public String teacherList(ModelMap modelMap){
         List<TeacherEntity> teacherEntityList=teaRepository.findAll();
         modelMap.addAttribute("teachers",teacherEntityList);
-        return "admin/teacher-list";
+        return "teacher-list";
     }
 
     //教师详细信息
@@ -169,14 +189,14 @@ public class AdminController {
         List<TeamEntity> teamEntityList=teamRepository.findByTeaNo(teaNo);
         modelMap.addAttribute(teacher);
         modelMap.addAttribute(teamEntityList);
-        return "admin/teacher-detail";
+        return "teacher-detail";
     }
     //跳转更改教师信息页面
     @RequestMapping(value = "teacher-change-table",method = GET)
     public String teacherChange(@RequestParam String tea_no,@RequestParam String name,ModelMap modelMap){
         modelMap.addAttribute("tea_no",tea_no);
         modelMap.addAttribute("name",name);
-        return "admin/teacher-change";
+        return "teacher-change";
     }
     //更改教师信息
     @RequestMapping(value = "admin-teacher-change",method = POST)
@@ -189,10 +209,10 @@ public class AdminController {
         if(n>0){
             TeacherEntity teacher=teaRepository.findByTeaNo(tea_no);
             modelMap.addAttribute(teacher);
-            return "admin/teacher-detail";
+            return "teacher-detail";
         }
         else{
-            return "admin/error";
+            return "error";
         }
     }
 
@@ -202,17 +222,23 @@ public class AdminController {
         List<ProjectEntity> projectEntities=projectRepository.findAll();
         System.out.println(projectEntities.size());
         modelMap.addAttribute("projects",projectEntities);
-        return "/admin/project-list";
+        return "project-list";
     }
     @RequestMapping("admin-project-change")
-    public String adminProjectChange(@RequestParam String project_no, @RequestParam String title, @RequestParam String team_no, @RequestParam String start_date, @RequestParam String end_date, @RequestParam String description, ModelMap modelMap){
-        Date startDate=Date.valueOf(start_date);
-        Date endDate=Date.valueOf(end_date);
-        projectRepository.adminUpdateProject(project_no,title,team_no,startDate,endDate,description);
-        projectRepository.flush();
-        List<ProjectEntity> projectEntities=projectRepository.findAll();
-        modelMap.addAttribute("projects",projectEntities);
-        return "admin/project-list";
+    public String adminProjectChange(@RequestParam String project_no, @RequestParam String title, @RequestParam String team_no, @RequestParam String start_date, @RequestParam String end_date, @RequestParam String description, ModelMap modelMap)
+        {
+            Date startDate = Date.valueOf(start_date);
+            Date endDate = Date.valueOf(end_date);
+            projectRepository.adminUpdateProject(project_no, title, team_no, startDate, endDate, description);
+            projectRepository.flush();
+            List<ProjectEntity> projectEntities = projectRepository.findAll();
+            modelMap.addAttribute("projects", projectEntities);
+            return "project-list";
+        }
+    @RequestMapping(value = "adminChangePasswd" ,method= GET)
+    public String adminChangePasswd(){
+        adminRepository.updatePasswd("asdf","admin");
+        return "project-list";
     }
 
 }

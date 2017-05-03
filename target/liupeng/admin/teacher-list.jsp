@@ -9,8 +9,8 @@
 	<meta name="keywords" content="" />
 	<meta name="robots" content="" />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" href="css/style.css" media="all" />
-	<!--[if IE]><link rel="stylesheet" href="css/ie.css" media="all" /><![endif]-->
+	<link rel="stylesheet" href="../css/style.css" media="all" />
+	<!--[if IE]><link rel="stylesheet" href="../css/ie.css" media="all" /><![endif]-->
 </head>
 <body>
 <div class="testing">
@@ -54,11 +54,11 @@
 					<tbody>
 					<c:forEach items="${teachers}" var="teacher">
 						<tr>
-							<td class="avatar"><img src="images/uiface1.png" alt="" height="40" width="40" /><a href="/admin-teacher-detail?teaNo=${teacher.teaNo}">${teacher.name}</a></td>
+							<td class="avatar"><img src="../images/uiface1.png" alt="" height="40" width="40" /><a href="/admin/admin-teacher-detail?teaNo=${teacher.teaNo}">${teacher.name}</a></td>
 							<td>${teacher.teaNo}</td>
 							<td>${teacher.college}</td>
 							<td>
-								<a href="/teacher-change-table?tea_no=${teacher.teaNo}&name=${teacher.name}">修改</a>
+								<a href="/admin/teacher-change-table?tea_no=${teacher.teaNo}&name=${teacher.name}">修改</a>
 								<a href="#">删除</a>
 							</td>
 						</tr>
@@ -68,16 +68,16 @@
 		</div>
 	</section>
 </section>
-<script src="js/jquery-1.6.1.min.js"></script>
-<script src="js/jquery.wysiwyg.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/cycle.js"></script>
-<script src="js/jquery.checkbox.min.js"></script>
-<script src="js/flot.js"></script>
-<script src="js/flot.resize.js"></script>
-<script src="js/flot-graphs.js"></script>
-<script src="js/flot-time.js"></script>
-<script src="js/cycle.js"></script>
-<script src="js/jquery.tablesorter.min.js"></script>
+<script src="../js/jquery-1.6.1.min.js"></script>
+<script src="../js/jquery.wysiwyg.js"></script>
+<script src="../js/custom.js"></script>
+<script src="../js/cycle.js"></script>
+<script src="../js/jquery.checkbox.min.js"></script>
+<script src="../js/flot.js"></script>
+<script src="../js/flot.resize.js"></script>
+<script src="../js/flot-graphs.js"></script>
+<script src="../js/flot-time.js"></script>
+<script src="../js/cycle.js"></script>
+<script src="../js/jquery.tablesorter.min.js"></script>
 </body>
 </html>

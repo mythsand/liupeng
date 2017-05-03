@@ -118,7 +118,7 @@
 			<%--</ul>--%>
 		<%--</li>--%>
 		<%--<li><a href="statistics"><span class="icon">&#128202;</span> Statistics</a></li>--%>
-		<li><a href="pages-table"><span class="icon">&#128101;</span> 信息查询 <span class="pip"></span></a></li>
+		<li><a href="pages-table"><span class="icon">&#128101;</span> 成员信息 <span class="pip"></span></a></li>
 		<%--<li>--%>
 			<%--<a href="ui-elements"><span class="icon">&#9881;</span> UI Elements</a>--%>
 			<%--<ul class="submenu">--%>
@@ -221,13 +221,13 @@
 		<%--</section>--%>
 	<%--</div>--%>
 	
-	<div class="widget-container">
-		<section class="widget small">
+	<div class="content" >
+		<section class="widget">
 			<header> 
 				<span class="icon">&#128318;</span>
 				<hgroup>
-					<h1>Website figures</h1>
-					<h2>Facts &amp; figures</h2>
+					<h1>概览</h1>
+					<h2>个人情况概览</h2>
 				</hgroup>
 				<aside>
 					<span>
@@ -243,65 +243,65 @@
 			<div class="content">
 				<section class="stats-wrapper">
 					<div class="stats">
-						<p><span>64</span></p>
-						<p>Pages</p>
+						<p><span>2</span></p>
+						<p>参与项目数</p>
 					</div>
 					<div class="stats">
-						<p><span>362</span></p>
-						<p>Comments</p>
+						<p><span>77</span></p>
+						<p>项目平均得分</p>
 					</div>
 				</section>
 				<section class="stats-wrapper">
 					<div class="stats">
 						<p><span>7</span></p>
-						<p>Users</p>
+						<p>队伍成员数</p>
 					</div>
 					<div class="stats">
-						<p><span>927</span></p>
-						<p>Assets</p>
+						<p><span>否</span></p>
+						<p>是否队长</p>
 					</div>
 				</section>
 			</div>
 		</section>
 		
-		<section class="widget small">
-			<header> 
-				<span class="icon">&#128363;</span>
-				<hgroup>
-					<h1>Timeline</h1>
-					<h2>Insiders news</h2>
-				</hgroup>
-				<aside>
-					<span>
-						<a href="#">&#9881;</a>
-						<ul class="settings-dd">
-							<li><label>Option a</label><input type="checkbox" /></li>
-							<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-							<li><label>Option c</label><input type="checkbox" /></li>
-						</ul>
-					</span>
-				</aside>
-			</header>
-			<div class="content no-padding timeline">
-				<div class="tl-post">
-					<span class="icon">&#128206;</span>
-					<p><a href="#">John Doe</a> attached an image to a blog post.</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#59172;</span>
-					<p><a href="#">John Doe</a> added his location.</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#59170;</span>
-					<p><a href="#">John Doe</a> edited his profile.</p>
-				</div>
-				<div class="tl-post">
-					<span class="icon">&#9993;</span>
-					<p><a href="#">John Doe</a> has sent you  private message.</p>
-				</div>
-				<div class="pie graph-area"></div>
-			</div>
-		</section>
+		<%--<section class="widget small">--%>
+			<%--<header> --%>
+				<%--<span class="icon">&#128363;</span>--%>
+				<%--<hgroup>--%>
+					<%--<h1>Timeline</h1>--%>
+					<%--<h2>Insiders news</h2>--%>
+				<%--</hgroup>--%>
+				<%--<aside>--%>
+					<%--<span>--%>
+						<%--<a href="#">&#9881;</a>--%>
+						<%--<ul class="settings-dd">--%>
+							<%--<li><label>Option a</label><input type="checkbox" /></li>--%>
+							<%--<li><label>Option b</label><input type="checkbox" checked="checked" /></li>--%>
+							<%--<li><label>Option c</label><input type="checkbox" /></li>--%>
+						<%--</ul>--%>
+					<%--</span>--%>
+				<%--</aside>--%>
+			<%--</header>--%>
+			<%--<div class="content no-padding timeline">--%>
+				<%--<div class="tl-post">--%>
+					<%--<span class="icon">&#128206;</span>--%>
+					<%--<p><a href="#">John Doe</a> attached an image to a blog post.</p>--%>
+				<%--</div>--%>
+				<%--<div class="tl-post">--%>
+					<%--<span class="icon">&#59172;</span>--%>
+					<%--<p><a href="#">John Doe</a> added his location.</p>--%>
+				<%--</div>--%>
+				<%--<div class="tl-post">--%>
+					<%--<span class="icon">&#59170;</span>--%>
+					<%--<p><a href="#">John Doe</a> edited his profile.</p>--%>
+				<%--</div>--%>
+				<%--<div class="tl-post">--%>
+					<%--<span class="icon">&#9993;</span>--%>
+					<%--<p><a href="#">John Doe</a> has sent you  private message.</p>--%>
+				<%--</div>--%>
+				<%--<div class="pie graph-area"></div>--%>
+			<%--</div>--%>
+		<%--</section>--%>
 		
 	</div>
 	<div class="widget-container">

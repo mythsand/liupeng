@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html lang="">
@@ -118,7 +119,7 @@
 		<%--</ul>--%>
 		<%--</li>--%>
 		<%--<li><a href="statistics"><span class="icon">&#128202;</span> Statistics</a></li>--%>
-		<li><a href="pages-table"><span class="icon">&#128101;</span> 信息查询 <span class="pip"></span></a></li>
+		<li><a href="pages-table"><span class="icon">&#128101;</span> 成员信息 <span class="pip"></span></a></li>
 		<%--<li>--%>
 		<%--<a href="ui-elements"><span class="icon">&#9881;</span> UI Elements</a>--%>
 		<%--<ul class="submenu">--%>
@@ -154,19 +155,30 @@
 			</aside>
 		</header>
 		<div class="content">
-			<div id="dropzone" class="dropzone gallery">
-				<a href="#"><img src="../images/mobile-stats.png" alt="" width="200" height="150" /></a> 
-				<a href="#"><img src="../images/mobile-dashboard.png" alt="" width="200" height="150" /></a> 
-				<a href="#"><img src="../images/mobile-stats.png" alt="" width="200" height="150" /></a> 
-				<a href="#"><img src="../images/mobile-dashboard.png" alt="" width="200" height="150" /></a> 
-				<a href="#"><img src="../images/mobile-stats.png" alt="" width="200" height="150" /></a> 
-				<a href="#"><img src="../images/mobile-dashboard.png" alt="" width="200" height="150" /></a> 
-				<a href="#"><img src="../images/mobile-stats.png" alt="" width="200" height="150" /></a> 
-				<a href="#"><img src="../images/mobile-dashboard.png" alt="" width="200" height="150" /></a> 
-				<a href="#"><img src="../images/mobile-stats.png" alt="" width="200" height="150" /></a> 
-				<a href="#"><img src="../images/mobile-dashboard.png" alt="" width="200" height="150" /></a> 
-				<a href="#"><img src="../images/mobile-stats.png" alt="" width="200" height="150" /></a> 
-			</div>
+			<table id="myTable" border="0" width="100">
+				<thead>
+				<tr>
+					<th>项目编号</th>
+					<th >项目名称</th>
+					<th>团队编号</th>
+					<th>开始日期</th>
+					<th>截止日期</th>
+					<th>下载文件</th>
+				</tr>
+				</thead>
+				<tbody>
+				<c:forEach items="${projects}" var="project">
+					<tr>
+						<td><input type="checkbox" /> ${project.projectNo}</td>
+						<td>${project.title}</td>
+						<td>${project.teamNo}</td>
+						<td>${project.startDate}</td>
+						<td>${project.endDate}</td>
+						<td><button class="button">下载</button></td>
+					</tr>
+				</c:forEach>
+				</tbody>
+			</table>
 		</div>
 	</section>
 </section>
