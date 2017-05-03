@@ -48,10 +48,7 @@
 			</aside>
 		</header>
 		<div class="content">
-			<form action="/admin/admin-teacher-change" method="post">
-				<div class="field-wrap">
-					<label class="label">工号</label><input type="text" name="tea_no" value="${tea_no}"/>
-				</div>
+			<form action="/admin/admin-admin-add" method="post">
 				<div class="field-wrap">
 					<label class="label">姓名</label>
 					<input type="text" name="name">
@@ -65,8 +62,16 @@
 					<input type="password" name="repasswd"/>
 				</div>
 				<div class="field-wrap">
-					<label class="label">学院</label>
-					<input type="text" name="college"/>
+					<label class="label">类型</label>
+					<select name="type">
+						<option value="1">超级管理员</option>
+						<option value="0">普通管理员</option>
+					</select>
+				</div>
+				<br/>
+				<div class="field-wrap">
+					<label class="label">部门</label>
+					<input type="text" name="department"/>
 				</div>
 				<button type="submit" class="green">提交</button> <button type="reset" class="">取消</button>
 			</form>

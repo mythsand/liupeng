@@ -20,51 +20,29 @@
 <%@include file="navbar.jsp"%>
 </div>
 <%@include file="functions-list.jsp"%>
-
 <section class="alert">
-	<div class="green">	
-		<p>Hi Lee, you have <a href="#">3 new pages</a> and <a href="#">16 comments</a> to approve, better get going!</p>
-		<span class="close">&#10006;</span>
+	<div class="green">
+		<p>在此处进行学生信息的详细查看，如需进行修改，请返回上一层<a href="/admin/admin-student-list">列表</a> ！</p><span class="close">&#10006;</span>
 	</div>
 </section>
+
 <section class="content">
 	<section class="widget" style="min-height:300px">
 		<header>
 			<span class="icon">&#59160;</span>
 			<hgroup>
-				<h1>Blog</h1>
-				<h2>Create new blog page</h2>
+				<h1>学生详细信息</h1>
 			</hgroup>
-			<aside>
-				<span>
-					<a href="#">&#9881;</a>
-					<ul class="settings-dd">
-						<li><label>Option a</label><input type="checkbox" /></li>
-						<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-						<li><label>Option c</label><input type="checkbox" /></li>
-					</ul>
-				</span>
-			</aside>
 		</header>
 		<div class="content">
-			<%--<div class="field-wrap">--%>
-				<%--<input type="text" value="Title"/>--%>
-			<%--</div>--%>
-			<%--<div class="field-wrap">--%>
-				<%--<input type="text" value="Author"/>--%>
-			<%--</div>--%>
-			<%--<div class="field-wrap">--%>
-				<%--<input type="text" value="Tags"/>--%>
-			<%--</div>--%>
-			<%--<div class="field-wrap wysiwyg-wrap">--%>
-				<%--<textarea class="post" rows="5"></textarea>--%>
-			<%--</div>--%>
-			<%--<button type="submit" class="green">Post</button> <button type="submit" class="">Preview</button>--%>
 			<table id="myTable" border="0" width="100">
 				<thead>
 				<h2 align="center">学生详细信息</h2>
 				</thead>
 				<tbody>
+				<tr align="center">
+					<td colspan="2"><img src="../images/uiface1.png"></td>
+				</tr>
 				<tr align="center">
 					<td>学生姓名：</td>
 					<td>${studentEntity.name}</td>
@@ -94,33 +72,20 @@
 			<header>
 				<span class="icon">&#59168;</span>
 				<hgroup>
-					<h1>Latest comments</h1>
-					<h2>What they're saying</h2>
+					<h1>指导教师评语</h1>
 				</hgroup>
-				<aside>
-					<span>
-						<a href="#">&#9881;</a>
-						<ul class="settings-dd">
-							<li><label>Option a</label><input type="checkbox" /></li>
-							<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-							<li><label>Option c</label><input type="checkbox" /></li>
-						</ul>
-					</span>
-				</aside>
 			</header>
 			<div class="content no-padding timeline">
 				<div class="tl-post comments">
 					<span class="icon">&#59168;</span>
 					<p>
-						<a href="#">John Doe says:</a> Lorem ipsum dolor sit amet, consecteteur adipiscing elit sed diam nonummy.
-						<span class="reply"><input type="text" value="Respond to comment..."/></span>
+						该生思维独特，勤奋踏实，创新能力强！
 					</p>
 				</div>
 				<div class="tl-post comments">
 					<span class="icon">&#59168;</span>
 					<p>
-						<a href="#">John Doe says:</a> Lorem ipsum dolor sit amet, consecteteur adipiscing elit sed diam nonummy.
-						<span class="reply"><input type="text" value="Respond to comment..."/></span>
+						该生思维独特，勤奋踏实，创新能力强！
 					</p>
 				</div>
 				<span class="show-more"><a	 href="#">More</a></span>
@@ -131,36 +96,25 @@
 			<header> 
 				<span class="icon">&#128196;</span>
 				<hgroup>
-					<h1>Other pages</h1>
-					<h2>More pages</h2>
+					<h1>主要经历</h1>
 				</hgroup>
-				<aside>
-					<span>
-						<a href="#">&#9881;</a>
-						<ul class="settings-dd">
-							<li><label>Option a</label><input type="checkbox" /></li>
-							<li><label>Option b</label><input type="checkbox" checked="checked" /></li>
-							<li><label>Option c</label><input type="checkbox" /></li>
-						</ul>
-					</span>
-				</aside>
 			</header>
 			<div class="content no-padding timeline">
 				<div class="tl-post">
 					<span class="icon">&#59185;</span>
-					<p><a href="#">eCommerce design</a> service page.</p>
+					<p>2016年完成国家级大创项目</p>
 				</div>
 				<div class="tl-post">
 					<span class="icon">&#59185;</span>
-					<p><a href="#">Search engine optimisation</a> service page..</p>
+					<p>2015年完成省级大创项目</p>
 				</div>
 				<div class="tl-post">
 					<span class="icon">&#59185;</span>
-					<p><a href="#">Website design</a> service page.</p>
+					<p>2014年完成校级大创项目</p>
 				</div>
 				<div class="tl-post">
 					<span class="icon">&#59185;</span>
-					<p><a href="#">Graphic design</a> service page.</p>
+					<p>获得优秀学生称号</p>
 				</div>
 			</div>
 		</section>
