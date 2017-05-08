@@ -44,7 +44,7 @@
 				</span>
 			</aside>
 		</header>
-		<form action="/admin/blog-news" method="get" class="content">
+		<form action="/admin/admin-blog-news" method="get" class="content">
 			<div class="field-wrap">
 				<input type="text" name="title" value="标题"/>
 			</div>

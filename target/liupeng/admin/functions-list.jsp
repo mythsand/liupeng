@@ -26,9 +26,8 @@
         <li>
             <a href="#"><span class="icon">&#59160;</span> 消息通知 <span class="pip">12</span></a>
             <ul class="submenu">
-                <li><a href="blog-new">上传通知</a></li>
-                <li><a href="blog-table">通知管理</a></li>
-                <li><a href="comments-timeline">查看评论</a></li>
+                <li><a href="/admin/admin-blog-new">上传通知</a></li>
+                <li><a href="/admin/admin-blog-list">通知列表</a></li>
             </ul>
         </li>
         <li>

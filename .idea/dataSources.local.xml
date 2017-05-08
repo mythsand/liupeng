@@ -9,6 +9,7 @@
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
+      <introspection-schemas>*:liupeng</introspection-schemas>
     </data-source>
     <data-source name="defaultPersistenceUnit/Hibernate" uuid="2a5a4cd2-a0aa-4336-9ece-eb34811f18e4">
       <database-info product="MySQL" version="5.7.17" jdbc-version="3.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )">
@@ -17,6 +18,7 @@
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <user-name>root</user-name>
+      <introspection-schemas>*:liupeng</introspection-schemas>
     </data-source>
   </component>
 </project>
