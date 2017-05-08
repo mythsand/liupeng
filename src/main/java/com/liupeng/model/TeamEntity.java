@@ -94,6 +94,11 @@ public class TeamEntity implements Serializable {
 //    }
 //
 //    public void setProjectByTeamNo(ProjectEntity projectByTeamNo) {
+
+    @Override
+    public String toString() {
+        return getTeamNo();
+    }
 //        this.projectByTeamNo = projectByTeamNo;
 //    }
 

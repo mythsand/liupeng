@@ -38,7 +38,7 @@
             <ul class="submenu">
                 <li><a href="/admin/admin-student-list">学生管理</a> </li>
                 <li><a href="/admin/admin-teacher-list">教师管理</a> </li>
-                <li><a href="#">团队管理</a> </li>
+                <li><a href="/admin/admin-team-list">团队管理</a> </li>
                 <li><a href="/admin/admin-admin-list">管理员管理</a> </li>
             </ul>
         </li>

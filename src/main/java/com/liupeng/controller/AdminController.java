@@ -364,4 +364,49 @@ public class AdminController {
         return "admin-statics";
     }
 
+    @RequestMapping("admin-team-list")
+    public String adminTeamList(ModelMap modelMap){
+        List<?> teamList=teamRepository.findAllTeam();
+//        System.out.println(teamList.toString());
+        modelMap.addAttribute("teams",teamList);
+        return "team-list";
+    }
+
+    @RequestMapping("admin-team-delete")
+    public String teamDelete(@RequestParam String name,@RequestParam String type, ModelMap modelMap){
+        if(!type.equals("1")){
+            return "error";
+        }
+        int n=teamRepository.deleteByTeamNo(name);
+        if(n>0){
+            List<TeamEntity>teams= teamRepository.findAll();
+            modelMap.addAttribute("teams",teams);
+            return "team-list";
+        }
+        else{
+            return "error";
+        }
+    }
+
+
+    @RequestMapping("team-add-team")
+    public String teamAdd(){
+        return "team-add";
+    }
+
+    @RequestMapping("admin-team-add")
+    public String adminAddTeam(TeamEntity teamEntity, ModelMap modelMap){
+
+//        adminEntity.setName(name);
+//        adminEntity.setPasswd(passwd);
+//        adminEntity.setType(type);
+//        adminEntity.setDepartment(department);
+//        adminRepository.save(adminEntity);
+
+        teamRepository.saveAndFlush(teamEntity);
+        List<TeamEntity> teams=teamRepository.findAll();
+        modelMap.addAttribute("teams", teams);
+        return "team-list";
+    }
+
 }
