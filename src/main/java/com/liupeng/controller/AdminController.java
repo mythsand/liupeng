@@ -38,17 +38,22 @@ public class AdminController {
     PostRepository postRepository;
 
 
-    @RequestMapping("index")
-    public String index(){
+//    @RequestMapping("index")
+//    public String index(){
+//        return "/admin/index";
+//    }
+    @RequestMapping("/")
+    public String index1(){
         return "/admin/index";
     }
-    @RequestMapping("")
-    public String index1(){
-        return "/admin/project-list";
-    }
     @RequestMapping("dashboard")
-    public String dashboard(){
-        return "/admin/dashboard";
+    public String dashboard(@RequestParam("name")String name, @RequestParam("passwd")String passwd){
+        List<?> list = adminRepository.findByNameAndPasswd(name, passwd);
+        if (list.size()!=0)
+        {
+            return "/admin/admin-statics";
+        }
+        return "/admin/login_error";
     }
     @RequestMapping("admin-blog-new")
     public String blogBlog(){

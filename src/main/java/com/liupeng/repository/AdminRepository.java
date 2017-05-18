@@ -8,6 +8,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by mythsand on 12/04/2017.
  */
@@ -28,4 +30,8 @@ public interface AdminRepository extends JpaRepository<AdminEntity, Integer>{
     @Modifying
     @Query("delete from AdminEntity admin where admin.name=?1")
     int deleteByName(String name);
+
+    @Query("select admin from AdminEntity admin where admin.name = ?1 and admin.passwd = ?2")
+    List<?> findByNameAndPasswd(String name, String passwd);
+
 }

@@ -13,10 +13,10 @@
 </head>
 <body>
 <div class="testing">
-<header class="main">
-	<h1><strong>Retina</strong> Dashboard</h1>
-	<input type="text" value="search" />
-</header>
+	<header class="main">
+		<h1><strong>大创管理平台</strong> </h1>
+		<input type="text" value="搜索..." />
+	</header>
 <%--用户导航栏--%>
 	<%@include file="navbar.jsp"%>
 </div>

@@ -13,10 +13,11 @@
 </head>
 <body class="login">
 	<section>
-		<h1><strong>学生管理平台</strong> 登录</h1>
+		<h1><strong>管理平台</strong> 登录</h1>
 		<form>
 			<%--<input type="text" value="学号" />--%>
 			<%--<input value="" type="password" />--%>
+				<br><br>
 				<button class="blue"><a href="/stu">学生登录</a></button>
 				<br><br><br>
 				<button class="green"><a href="/admin">管理登录</a></button>

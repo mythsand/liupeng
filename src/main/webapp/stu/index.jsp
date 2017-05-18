@@ -13,7 +13,7 @@
 </head>
 <body class="login">
 	<section>
-		<h1><strong>学生管理平台</strong> 登录</h1>
+		<h1><strong>管理平台</strong> 学生</h1>
 		<form method="link" action="/stu/dashboard">
 			<input type="text" value="学号" name="stuno"/>
 			<input value="" type="password" name="passwd"/>

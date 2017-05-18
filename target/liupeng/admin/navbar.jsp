@@ -7,13 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <section class="user">
-    <div class="profile-img">
-        <p><img src="../images/uiface2.png" alt="" height="40" width="40" /> Welcome back John Doe</p>
-    </div>
+	<div class="profile-img">
+		<p><img src="../images/uiface2.png" alt="" height="40" width="40" /> 欢迎进入学生平台</p>
+	</div>
     <div class="buttons">
         <button class="ico-font">&#9206;</button>
         <span class="button dropdown">
-			<a href="#">消息通知 <span class="pip">4</span></a>
+			<a href="#">消息通知 </a>
 			<ul class="notice">
 				<li>
 					<hgroup>
@@ -46,7 +46,7 @@
 			</ul>
 		</span>
         <span class="button dropdown">
-			<a href="#">收件箱 <span class="pip">6</span></a>
+			<a href="#">收件箱 </a>
 			<ul class="notice">
 				<li>
 					<hgroup>

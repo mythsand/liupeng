@@ -15,7 +15,7 @@
 <body>
 <div class="testing">
 <header class="main">
-	<h1>大创管理系统</h1>
+	<h1>大创管理平台</h1>
 	<input type="text" value="search" />
 </header>
 <%@include file="navbar.jsp"%>

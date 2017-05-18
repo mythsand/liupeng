@@ -33,10 +33,10 @@ public class StudentController {
     @Autowired
     ProjectRepository projectRepository;
 
-    @RequestMapping("index")
-    public String index(){
-        return "/stu/index";
-    }
+//    @RequestMapping("index")
+//    public String index(){
+//        return "/stu/index";
+//    }
     @RequestMapping("")
     public String index1(){
         return "/stu/index";
@@ -49,7 +49,7 @@ public class StudentController {
         {
             return "/stu/dashboard";
         }
-        return "index";
+        return "/stu/login_error";
     }
     @RequestMapping("blog-new")
     public String blogBlog(){

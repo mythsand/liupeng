@@ -14,7 +14,7 @@
 <body>
 <div class="testing">
 <header class="main">
-	<h1><strong>Retina</strong> Dashboard</h1>
+	<h1><strong>大创管理平台</strong></h1>
 	<input type="text" value="search" />
 </header>
 <%--用户导航栏--%>

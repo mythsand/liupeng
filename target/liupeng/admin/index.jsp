@@ -13,9 +13,9 @@
 </head>
 <body class="login">
 	<section>
-		<h1><strong>管理平台</strong> 学生</h1>
-		<form method="link" action="/stu/dashboard">
-			<input type="text" value="学号" name="stuno"/>
+		<h1><strong>管理平台</strong> 管理员</h1>
+		<form method="link" action="/admin/dashboard">
+			<input type="text" value="账号" name="name"/>
 			<input value="" type="password" name="passwd"/>
 			<button class="blue">登录</button>
 		</form>
