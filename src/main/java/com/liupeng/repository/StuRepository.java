@@ -37,4 +37,7 @@ public interface StuRepository extends JpaRepository<StudentEntity, Integer>{
 
     @Query("select student from StudentEntity student  where student.stuNo = ?1")
     List<StudentEntity> findByTeammem(String stuNO);
+
+    @Query("select student from StudentEntity student where student.stuNo = ?1 and student.passwd = ?2")
+    List<StudentEntity> findByStuNoAndPasswd(String stuno, String passwd);
 }

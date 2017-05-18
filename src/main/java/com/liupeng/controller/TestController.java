@@ -17,7 +17,7 @@ import java.util.List;
  * Created by mythsand on 22/04/2017.
  */
 @Controller
-@RequestMapping("/test")
+@RequestMapping("")
 public class TestController {
     @Autowired
     StuRepository stuRepository;
@@ -53,6 +53,12 @@ public class TestController {
         stuRepository.saveAndFlush(studentEntity);
 
         return new ResponseEntity<String>("SDFSDF", HttpStatus.OK);
+    }
+
+    @RequestMapping("/")
+    public String index(){
+
+        return "index";
     }
 
 }

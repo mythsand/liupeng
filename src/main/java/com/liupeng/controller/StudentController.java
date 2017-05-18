@@ -1,5 +1,6 @@
 package com.liupeng.controller;
 
+import com.liupeng.model.StudentEntity;
 import com.liupeng.repository.ProjectRepository;
 import com.liupeng.repository.StuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by mythsand on 17/04/2017.
@@ -40,8 +42,14 @@ public class StudentController {
         return "/stu/index";
     }
     @RequestMapping("dashboard")
-    public String dashboard(){
-        return "/stu/dashboard";
+    public String dashboard(@RequestParam("stuno")String stuno, @RequestParam("passwd")String passwd){
+        System.out.println(stuno+"   "+passwd);
+        List<StudentEntity> result = stuRepository.findByStuNoAndPasswd(stuno, passwd);
+        if (result.size() != 0)
+        {
+            return "/stu/dashboard";
+        }
+        return "index";
     }
     @RequestMapping("blog-new")
     public String blogBlog(){
